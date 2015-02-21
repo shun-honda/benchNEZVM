@@ -1,0 +1,5 @@
+File
+	= { ( Line )* #RepLine }
+
+Line
+	= (((!';' .)* ';\n') / '\n' )

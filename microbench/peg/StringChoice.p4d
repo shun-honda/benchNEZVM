@@ -1,0 +1,2 @@
+File
+	= { ('ab' / 'cd' / 'ef' / 'gh' / 'ij')* #StringChoice }

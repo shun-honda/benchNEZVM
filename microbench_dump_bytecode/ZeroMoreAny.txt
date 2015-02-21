@@ -1,0 +1,38 @@
+
+Generate Byte Code
+
+	EXIT
+File:
+	NEW
+L3
+	LOADp1
+	ANY 4
+	JUMP 3
+L4
+	STOREflag 0
+	STOREp1
+	TAG #ZeroMoreAny
+	SETendp
+	POPp
+	JUMP 1
+L2
+	ABORT
+	JUMP
+L1
+L0
+	RET
+
+[0] EXIT
+[1] NEW
+[2] LOADp1
+[3] ANY 5
+[4] JUMP 2
+[5] STOREflag 0
+[6] STOREp1
+[7] TAG #ZeroMoreAny
+[8] SETendp
+[9] POPp
+[10] JUMP 13
+[11] ABORT
+[12] JUMP 13
+[13] RET

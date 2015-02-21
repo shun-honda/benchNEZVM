@@ -1,0 +1,28 @@
+
+Generate Byte Code
+
+	EXIT
+File:
+	NEW
+	ZEROMORECHARSET 97 98 99 100 101
+	TAG #RepChoice
+	SETendp
+	POPp
+	JUMP 1
+L2
+	ABORT
+	JUMP
+L1
+L0
+	RET
+
+[0] EXIT
+[1] NEW
+[2] ZEROMORECHARSET 97 98 99 100 101
+[3] TAG #RepChoice
+[4] SETendp
+[5] POPp
+[6] JUMP 9
+[7] ABORT
+[8] JUMP 9
+[9] RET
