@@ -160,7 +160,7 @@ public class Validation {
 					}
 				}
 			}
-			System.out.println("file1 == file2");
+			System.out.println("Valid AST");
 		}
 		else {
 			while(j < length) {
@@ -199,7 +199,7 @@ public class Validation {
 					}
 				}
 			}
-			System.out.println("file1 == file2");
+			System.out.println("Valid AST");
 		}
 	}
 }
