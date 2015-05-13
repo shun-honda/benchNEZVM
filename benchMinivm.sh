@@ -2,61 +2,61 @@
 DATADIR=input
 BYTECODE=minivmByteCode/nonOpt
 BYTECODEOPT=minivmByteCode/opt
-VMDIR=../MiniNezvm/src/mini_instruction_vm/build
-OPTVMDIR=../MiniNezvm/src/mini_instruction_opt_vm/build
+VMDIR=../MiniNezVM/src/mini_instruction_vm/build
+OPTVMDIR=../MiniNezVM/src/mini_instruction_opt_vm/build
 
 echo "\nunoptimized bench data\n"
 
-make -C $VMDIR clean
-make -C $VMDIR
+make -C ../MiniNezVM/src/mini_instruction_vm/build clean
+make -C ../MiniNezVM/src/mini_instruction_vm/build
 echo "\nparse earthquake.geojson\n"
-./$VMDIR/nezvm -t stat -p $BYTECODE/json.bin -i $DATADIR/earthquake.geojson
+./../MiniNezVM/src/mini_instruction_vm/build/nezvm -t stat -p minivmByteCode/nonOpt/json.bin -i input/earthquake.geojson
 
 echo "\nparse benchmark4.json\n"
-./$VMDIR/nezvm -t stat -p $BYTECODE/json.bin -i $DATADIR/benchmark4.json
+./../MiniNezVM/src/mini_instruction_vm/build/nezvm -t stat -p minivmByteCode/nonOpt/json.bin -i input/benchmark4.json
 
 echo "\nparse citys.json\n"
-./$VMDIR/nezvm -t stat -p $BYTECODE/json.bin -i $DATADIR/citys.json
+./../MiniNezVM/src/mini_instruction_vm/build/nezvm -t stat -p minivmByteCode/nonOpt/json.bin -i input/citys.json
 
 echo "\nparse xmark5m.xml\n"
-./$VMDIR/nezvm -t stat -p $BYTECODE/xml.bin -i $DATADIR/xmark5m.xml
+./../MiniNezVM/src/mini_instruction_vm/build/nezvm -t stat -p minivmByteCode/nonOpt/xml.bin -i input/xmark5m.xml
 
 echo "\nparse geometry_base.xml\n"
-./$VMDIR/nezvm -t stat -p $BYTECODE/xml.bin -i $DATADIR/geometry_base.xml
+./../MiniNezVM/src/mini_instruction_vm/build/nezvm -t stat -p minivmByteCode/nonOpt/xml.bin -i input/geometry_base.xml
 
 echo "\nparse 01HOKKAI_ROME.CSV\n"
-./$VMDIR/nezvm -t stat -p $BYTECODE/csv.bin -i $DATADIR/01HOKKAI_ROME.CSV
+./../MiniNezVM/src/mini_instruction_vm/build/nezvm -t stat -p minivmByteCode/nonOpt/csv.bin -i input/01HOKKAI_ROME.CSV
 
 echo "\nparse earthquake.csv\n"
-./$VMDIR/nezvm -t stat -p $BYTECODE/csv.bin -i $DATADIR/earthquake.csv
+./../MiniNezVM/src/mini_instruction_vm/build/nezvm -t stat -p minivmByteCode/nonOpt/csv.bin -i input/earthquake.csv
 
 echo "\nparse test.syslog\n"
-./$VMDIR/nezvm -t stat -p $BYTECODE/syslog.bin -i $DATADIR/test.syslog
+./../MiniNezVM/src/mini_instruction_vm/build/nezvm -t stat -p minivmByteCode/nonOpt/syslog.bin -i input/test.syslog
 
 echo "\noptimized bench data\n"
 
-make -C $OPTVMDIR clean
-make -C $OPTVMDIR
+make -C ../MiniNezVM/src/mini_instruction_opt_vm/build clean
+make -C ../MiniNezVM/src/mini_instruction_opt_vm/build
 echo "\nparse earthquake.geojson\n"
-./$OPTVMDIR/nezvm -t stat -p $BYTECODEOPT/json.bin -i $DATADIR/earthquake.geojson
+./../MiniNezVM/src/mini_instruction_opt_vm/build/nezvm -t stat -p minivmByteCode/opt/json.bin -i input/earthquake.geojson
 
 echo "\nparse benchmark4.json\n"
-./$OPTVMDIR/nezvm -t stat -p $BYTECODEOPT/json.bin -i $DATADIR/benchmark4.json
+./../MiniNezVM/src/mini_instruction_opt_vm/build/nezvm -t stat -p minivmByteCode/opt/json.bin -i input/benchmark4.json
 
 echo "\nparse citys.json\n"
-./$OPTVMDIR/nezvm -t stat -p $BYTECODEOPT/json.bin -i $DATADIR/citys.json
+./../MiniNezVM/src/mini_instruction_opt_vm/build/nezvm -t stat -p minivmByteCode/opt/json.bin -i input/citys.json
 
 echo "\nparse xmark5m.xml\n"
-./$OPTVMDIR/nezvm -t stat -p $BYTECODEOPT/xml.bin -i $DATADIR/xmark5m.xml
+./../MiniNezVM/src/mini_instruction_opt_vm/build/nezvm -t stat -p minivmByteCode/opt/xml.bin -i input/xmark5m.xml
 
 echo "\nparse geometry_base.xml\n"
-./$OPTVMDIR/nezvm -t stat -p $BYTECODEOPT/xml.bin -i $DATADIR/geometry_base.xml
+./../MiniNezVM/src/mini_instruction_opt_vm/build/nezvm -t stat -p minivmByteCode/opt/xml.bin -i input/geometry_base.xml
 
 echo "\nparse 01HOKKAI_ROME.CSV\n"
-./$OPTVMDIR/nezvm -t stat -p $BYTECODEOPT/csv.bin -i $DATADIR/01HOKKAI_ROME.CSV
+./../MiniNezVM/src/mini_instruction_opt_vm/build/nezvm -t stat -p minivmByteCode/opt/csv.bin -i input/01HOKKAI_ROME.CSV
 
 echo "\nparse earthquake.csv\n"
-./$OPTVMDIR/nezvm -t stat -p $BYTECODEOPT/csv.bin -i $DATADIR/earthquake.csv
+./../MiniNezVM/src/mini_instruction_opt_vm/build/nezvm -t stat -p minivmByteCode/opt/csv.bin -i input/earthquake.csv
 
 echo "\nparse test.syslog\n"
-./$OPTVMDIR/nezvm -t stat -p $BYTECODEOPT/syslog.bin -i $DATADIR/test.syslog
+./../MiniNezVM/src/mini_instruction_opt_vm/build/nezvm -t stat -p minivmByteCode/opt/syslog.bin -i input/test.syslog
