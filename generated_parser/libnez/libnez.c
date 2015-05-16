@@ -6,6 +6,15 @@ void nez_PrintErrorInfo(const char *errmsg) {
   exit(EXIT_FAILURE);
 }
 
+void nez_consume(ParsingContext ctx) {
+  if(ctx->pos < ctx->input_size) {
+    ctx->pos++;
+  }
+  else {
+    nez_PrintErrorInfo("input over flow");
+  }
+}
+
 void dump_pego(ParsingObject *pego, char *source, int level) {
   int i;
   long j;

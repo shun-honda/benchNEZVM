@@ -111,6 +111,8 @@ static inline ParsingLog MemoryPool_AllocParsingLog(MemoryPool mpool) {
   return &mpool->log_pool[mpool->lidx++];
 }
 
+void nez_consume(ParsingContext ctx);
+
 #define PARSING_CONTEXT_MAX_STACK_LENGTH 1024
 ParsingContext nez_CreateParsingContext(const char *filename);
 void nez_DisposeParsingContext(ParsingContext ctx);
