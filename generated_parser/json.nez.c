@@ -304,6 +304,7 @@ int pOneMore351(ParsingContext ctx) {
          ctx->pos = pos0;
          return 1;
       }
+      if(ctx->pos == pos0) { return 1; }
       pos0 = ctx->pos;
    }
 }
@@ -514,13 +515,12 @@ int pSequence165(ParsingContext ctx) {
 
 int pZeroMore163(ParsingContext ctx) {
    long pos0 = ctx->pos;
-   while(1) {
-      if(!pChoice162(ctx)) {
-         ctx->pos = pos0;
-         return 1;
-      }
-      pos0 = ctx->pos;
+   if(!pChoice162(ctx)) {
+      ctx->pos = pos0;
+      return pZeroMore163(ctx);
    }
+   if(ctx->pos == pos0) { return 1; }
+   return 1;
 }
 
 int pChoice162(ParsingContext ctx) {
@@ -596,9 +596,6 @@ int pNot160(ParsingContext ctx) {
 
 int pAnyChar121(ParsingContext ctx) {
    int result = 0;
-   if(ctx->inputs[ctx->pos] == (char)0) {
-      result = 1;
-   }
    if(ctx->inputs[ctx->pos] == (char)1) {
       result = 1;
    }
@@ -1447,13 +1444,12 @@ int pSequence361(ParsingContext ctx) {
 
 int pZeroMore360(ParsingContext ctx) {
    long pos0 = ctx->pos;
-   while(1) {
-      if(!pS(ctx)) {
-         ctx->pos = pos0;
-         return 1;
-      }
-      pos0 = ctx->pos;
+   if(!pS(ctx)) {
+      ctx->pos = pos0;
+      return pZeroMore360(ctx);
    }
+   if(ctx->pos == pos0) { return 1; }
+   return 1;
 }
 
 int pDIGIT(ParsingContext ctx) {
@@ -1544,13 +1540,12 @@ int pByteMap362(ParsingContext ctx) {
 
 int pZeroMore364(ParsingContext ctx) {
    long pos1 = ctx->pos;
-   while(1) {
-      if(!pDIGIT(ctx)) {
-         ctx->pos = pos1;
-         return 1;
-      }
-      pos1 = ctx->pos;
+   if(!pDIGIT(ctx)) {
+      ctx->pos = pos1;
+      return pZeroMore364(ctx);
    }
+   if(ctx->pos == pos1) { return 1; }
+   return 1;
 }
 
 int pFRAC(ParsingContext ctx) {
@@ -1592,6 +1587,7 @@ int pOneMore367(ParsingContext ctx) {
          ctx->pos = pos0;
          return 1;
       }
+      if(ctx->pos == pos0) { return 1; }
       pos0 = ctx->pos;
    }
 }
@@ -1656,13 +1652,12 @@ int pSequence373(ParsingContext ctx) {
 
 int pZeroMore372(ParsingContext ctx) {
    long pos0 = ctx->pos;
-   while(1) {
-      if(!pSequence371(ctx)) {
-         ctx->pos = pos0;
-         return 1;
-      }
-      pos0 = ctx->pos;
+   if(!pSequence371(ctx)) {
+      ctx->pos = pos0;
+      return pZeroMore372(ctx);
    }
+   if(ctx->pos == pos0) { return 1; }
+   return 1;
 }
 
 int pSequence371(ParsingContext ctx) {
@@ -1807,13 +1802,12 @@ int pSequence383(ParsingContext ctx) {
 
 int pZeroMore382(ParsingContext ctx) {
    long pos0 = ctx->pos;
-   while(1) {
-      if(!pSequence381(ctx)) {
-         ctx->pos = pos0;
-         return 1;
-      }
-      pos0 = ctx->pos;
+   if(!pSequence381(ctx)) {
+      ctx->pos = pos0;
+      return pZeroMore382(ctx);
    }
+   if(ctx->pos == pos0) { return 1; }
+   return 1;
 }
 
 int pSequence381(ParsingContext ctx) {

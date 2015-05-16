@@ -56,6 +56,7 @@ int pZeroMore348(ParsingContext ctx) {
          ctx->pos = pos0;
          return 1;
       }
+      if(ctx->pos == pos0) { return 1; }
       pos0 = ctx->pos;
    }
 }
@@ -111,6 +112,7 @@ int pZeroMore354(ParsingContext ctx) {
          ctx->pos = pos0;
          return 1;
       }
+      if(ctx->pos == pos0) { return 1; }
       pos0 = ctx->pos;
    }
 }
@@ -962,6 +964,7 @@ int pZeroMore360(ParsingContext ctx) {
          ctx->pos = pos0;
          return 1;
       }
+      if(ctx->pos == pos0) { return 1; }
       pos0 = ctx->pos;
    }
 }
@@ -1017,6 +1020,7 @@ int pZeroMore367(ParsingContext ctx) {
          ctx->pos = pos0;
          return 1;
       }
+      if(ctx->pos == pos0) { return 1; }
       pos0 = ctx->pos;
    }
 }
