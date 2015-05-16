@@ -113,6 +113,8 @@ static inline ParsingLog MemoryPool_AllocParsingLog(MemoryPool mpool) {
 
 void nez_consume(ParsingContext ctx);
 void nez_backtrack(ParsingContext ctx, long pos);
+int nez_match(ParsingContext ctx, char c);
+int nez_not_match(ParsingContext ctx, char c);
 
 #define PARSING_CONTEXT_MAX_STACK_LENGTH 1024
 ParsingContext nez_CreateParsingContext(const char *filename);

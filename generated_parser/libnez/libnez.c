@@ -8,6 +8,7 @@ void nez_PrintErrorInfo(const char *errmsg) {
 
 void nez_consume(ParsingContext ctx) {
   if(ctx->pos < ctx->input_size) {
+    // fprintf(stderr, "%ld\n", ctx->pos);
     ctx->pos++;
   }
   else {
@@ -28,6 +29,20 @@ void nez_backtrack(ParsingContext ctx, long pos) {
       nez_PrintErrorInfo("backtrack error");
     }
   }
+}
+
+int nez_match(ParsingContext ctx, char c) {
+  if(ctx->inputs[ctx->pos] == c) {
+    return 1;
+  }
+  return 0;
+}
+
+int nez_not_match(ParsingContext ctx, char c) {
+  if(ctx->inputs[ctx->pos] != c) {
+    return 1;
+  }
+  return 0;
 }
 
 void dump_pego(ParsingObject *pego, char *source, int level) {
