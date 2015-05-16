@@ -324,43 +324,43 @@ int pChoice350(ParsingContext ctx) {
 
 int pByteMap106(ParsingContext ctx) {
    int result = 0;
-   if(ctx->inputs[ctx->pos] == '0') {
+   if(nez_match(ctx, '0')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '1') {
+   if(nez_match(ctx, '1')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '2') {
+   if(nez_match(ctx, '2')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '3') {
+   if(nez_match(ctx, '3')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '4') {
+   if(nez_match(ctx, '4')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '5') {
+   if(nez_match(ctx, '5')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '6') {
+   if(nez_match(ctx, '6')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '7') {
+   if(nez_match(ctx, '7')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '8') {
+   if(nez_match(ctx, '8')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '9') {
+   if(nez_match(ctx, '9')) {
       ctx->pos++;
       return 1;
    }
@@ -369,107 +369,107 @@ int pByteMap106(ParsingContext ctx) {
 
 int pByteMap349(ParsingContext ctx) {
    int result = 0;
-   if(ctx->inputs[ctx->pos] == 'a') {
+   if(nez_match(ctx, 'a')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'b') {
+   if(nez_match(ctx, 'b')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'c') {
+   if(nez_match(ctx, 'c')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'd') {
+   if(nez_match(ctx, 'd')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'e') {
+   if(nez_match(ctx, 'e')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'f') {
+   if(nez_match(ctx, 'f')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'g') {
+   if(nez_match(ctx, 'g')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'h') {
+   if(nez_match(ctx, 'h')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'i') {
+   if(nez_match(ctx, 'i')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'j') {
+   if(nez_match(ctx, 'j')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'k') {
+   if(nez_match(ctx, 'k')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'l') {
+   if(nez_match(ctx, 'l')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'm') {
+   if(nez_match(ctx, 'm')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'n') {
+   if(nez_match(ctx, 'n')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'o') {
+   if(nez_match(ctx, 'o')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'p') {
+   if(nez_match(ctx, 'p')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'q') {
+   if(nez_match(ctx, 'q')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'r') {
+   if(nez_match(ctx, 'r')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 's') {
+   if(nez_match(ctx, 's')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 't') {
+   if(nez_match(ctx, 't')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'u') {
+   if(nez_match(ctx, 'u')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'v') {
+   if(nez_match(ctx, 'v')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'w') {
+   if(nez_match(ctx, 'w')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'x') {
+   if(nez_match(ctx, 'x')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'y') {
+   if(nez_match(ctx, 'y')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == 'z') {
+   if(nez_match(ctx, 'z')) {
       ctx->pos++;
       return 1;
    }
@@ -1787,39 +1787,39 @@ int pSequence365(ParsingContext ctx) {
 
 int pByteMap362(ParsingContext ctx) {
    int result = 0;
-   if(ctx->inputs[ctx->pos] == '1') {
+   if(nez_match(ctx, '1')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '2') {
+   if(nez_match(ctx, '2')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '3') {
+   if(nez_match(ctx, '3')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '4') {
+   if(nez_match(ctx, '4')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '5') {
+   if(nez_match(ctx, '5')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '6') {
+   if(nez_match(ctx, '6')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '7') {
+   if(nez_match(ctx, '7')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '8') {
+   if(nez_match(ctx, '8')) {
       ctx->pos++;
       return 1;
    }
-   if(ctx->inputs[ctx->pos] == '9') {
+   if(nez_match(ctx, '9')) {
       ctx->pos++;
       return 1;
    }
