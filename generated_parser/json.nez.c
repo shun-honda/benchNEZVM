@@ -517,10 +517,10 @@ int pZeroMore163(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(!pChoice162(ctx)) {
       ctx->pos = pos0;
-      return pZeroMore163(ctx);
+      return 1;
    }
    if(ctx->pos == pos0) { return 1; }
-   return 1;
+   return pZeroMore163(ctx);
 }
 
 int pChoice162(ParsingContext ctx) {
@@ -1446,10 +1446,10 @@ int pZeroMore360(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(!pS(ctx)) {
       ctx->pos = pos0;
-      return pZeroMore360(ctx);
+      return 1;
    }
    if(ctx->pos == pos0) { return 1; }
-   return 1;
+   return pZeroMore360(ctx);
 }
 
 int pDIGIT(ParsingContext ctx) {
@@ -1542,10 +1542,10 @@ int pZeroMore364(ParsingContext ctx) {
    long pos1 = ctx->pos;
    if(!pDIGIT(ctx)) {
       ctx->pos = pos1;
-      return pZeroMore364(ctx);
+      return 1;
    }
    if(ctx->pos == pos1) { return 1; }
-   return 1;
+   return pZeroMore364(ctx);
 }
 
 int pFRAC(ParsingContext ctx) {
@@ -1654,10 +1654,10 @@ int pZeroMore372(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(!pSequence371(ctx)) {
       ctx->pos = pos0;
-      return pZeroMore372(ctx);
+      return 1;
    }
    if(ctx->pos == pos0) { return 1; }
-   return 1;
+   return pZeroMore372(ctx);
 }
 
 int pSequence371(ParsingContext ctx) {
@@ -1804,10 +1804,10 @@ int pZeroMore382(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(!pSequence381(ctx)) {
       ctx->pos = pos0;
-      return pZeroMore382(ctx);
+      return 1;
    }
    if(ctx->pos == pos0) { return 1; }
-   return 1;
+   return pZeroMore382(ctx);
 }
 
 int pSequence381(ParsingContext ctx) {
