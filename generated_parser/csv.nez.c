@@ -5,26 +5,28 @@
 
 int pLine(ParsingContext ctx);
 int pSequence350(ParsingContext ctx);
-int pZeroMore347(ParsingContext ctx);
-int pSequence346(ParsingContext ctx);
+int pZeroMore348(ParsingContext ctx);
+int pSequence347(ParsingContext ctx);
 int pByteChar46(ParsingContext ctx);
-int pChoice348(ParsingContext ctx);
-int pByteChar231(ParsingContext ctx);
-int pNot268(ParsingContext ctx);
-int pAnyChar121(ParsingContext ctx);
-int pCsv(ParsingContext ctx);
-int pSequence360(ParsingContext ctx);
+int pValue(ParsingContext ctx);
+int pSequence356(ParsingContext ctx);
 int pZeroMore354(ParsingContext ctx);
-int pChoice353(ParsingContext ctx);
-int pByteChar351(ParsingContext ctx);
-int pByteChar352(ParsingContext ctx);
-int pZeroMore358(ParsingContext ctx);
-int pSequence357(ParsingContext ctx);
-int pNot356(ParsingContext ctx);
-int pChoice355(ParsingContext ctx);
+int pSequence353(ParsingContext ctx);
+int pNot352(ParsingContext ctx);
+int pChoice351(ParsingContext ctx);
+int pByteChar231(ParsingContext ctx);
+int pAnyChar121(ParsingContext ctx);
 int pFile(ParsingContext ctx);
-int pSequence364(ParsingContext ctx);
-int pZeroMore363(ParsingContext ctx);
+int pSequence363(ParsingContext ctx);
+int pZeroMore360(ParsingContext ctx);
+int pSequence359(ParsingContext ctx);
+int pChoice361(ParsingContext ctx);
+int pNot268(ParsingContext ctx);
+int p_(ParsingContext ctx);
+int pZeroMore367(ParsingContext ctx);
+int pChoice366(ParsingContext ctx);
+int pByteChar364(ParsingContext ctx);
+int pByteChar365(ParsingContext ctx);
 
 int pLine(ParsingContext ctx) {
    if(pSequence350(ctx)) {
@@ -38,22 +40,19 @@ int pLine(ParsingContext ctx) {
 int pSequence350(ParsingContext ctx) {
    int result = 1;
    long pos = ctx->pos;
-   if(!pCsv(ctx)) {
+   if(!pValue(ctx)) {
       return 0;
    }
-   if(!pZeroMore347(ctx)) {
-      return 0;
-   }
-   if(!pChoice348(ctx)) {
+   if(!pZeroMore348(ctx)) {
       return 0;
    }
    return result;
 }
 
-int pZeroMore347(ParsingContext ctx) {
+int pZeroMore348(ParsingContext ctx) {
    long pos0 = ctx->pos;
    while(1) {
-      if(!pSequence346(ctx)) {
+      if(!pSequence347(ctx)) {
          ctx->pos = pos0;
          return 1;
       }
@@ -61,13 +60,19 @@ int pZeroMore347(ParsingContext ctx) {
    }
 }
 
-int pSequence346(ParsingContext ctx) {
+int pSequence347(ParsingContext ctx) {
    int result = 1;
    long pos = ctx->pos;
+   if(!p_(ctx)) {
+      return 0;
+   }
    if(!pByteChar46(ctx)) {
       return 0;
    }
-   if(!pCsv(ctx)) {
+   if(!p_(ctx)) {
+      return 0;
+   }
+   if(!pValue(ctx)) {
       return 0;
    }
    return result;
@@ -81,13 +86,64 @@ int pByteChar46(ParsingContext ctx) {
    return 1;
 }
 
-int pChoice348(ParsingContext ctx) {
+int pValue(ParsingContext ctx) {
+   if(pSequence356(ctx)) {
+      return 1;
+   }
+   else {
+      return 0;
+   }
+}
+
+int pSequence356(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
+   if(!pZeroMore354(ctx)) {
+      return 0;
+   }
+   return result;
+}
+
+int pZeroMore354(ParsingContext ctx) {
+   long pos0 = ctx->pos;
+   while(1) {
+      if(!pSequence353(ctx)) {
+         ctx->pos = pos0;
+         return 1;
+      }
+      pos0 = ctx->pos;
+   }
+}
+
+int pSequence353(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
+   if(!pNot352(ctx)) {
+      return 0;
+   }
+   if(!pAnyChar121(ctx)) {
+      return 0;
+   }
+   return result;
+}
+
+int pNot352(ParsingContext ctx) {
+   long pos0 = ctx->pos;
+   if(pChoice351(ctx)) {
+      ctx->pos = pos0;
+      return 0;
+   }
+   ctx->pos = pos0;
+   return 1;
+}
+
+int pChoice351(ParsingContext ctx) {
    long pos1 = ctx->pos;
-   if(pByteChar231(ctx)) {
+   if(pByteChar46(ctx)) {
       return 1;
    }
    ctx->pos = pos1;
-   if(pNot268(ctx)) {
+   if(pByteChar231(ctx)) {
       return 1;
    }
    ctx->pos = pos1;
@@ -102,21 +158,8 @@ int pByteChar231(ParsingContext ctx) {
    return 1;
 }
 
-int pNot268(ParsingContext ctx) {
-   long pos1 = ctx->pos;
-   if(pAnyChar121(ctx)) {
-      ctx->pos = pos1;
-      return 0;
-   }
-   ctx->pos = pos1;
-   return 1;
-}
-
 int pAnyChar121(ParsingContext ctx) {
    int result = 0;
-   if(ctx->inputs[ctx->pos] == (char)0) {
-      result = 1;
-   }
    if(ctx->inputs[ctx->pos] == (char)1) {
       result = 1;
    }
@@ -888,8 +931,8 @@ int pAnyChar121(ParsingContext ctx) {
    return result;
 }
 
-int pCsv(ParsingContext ctx) {
-   if(pSequence360(ctx)) {
+int pFile(ParsingContext ctx) {
+   if(pSequence363(ctx)) {
       return 1;
    }
    else {
@@ -897,22 +940,25 @@ int pCsv(ParsingContext ctx) {
    }
 }
 
-int pSequence360(ParsingContext ctx) {
+int pSequence363(ParsingContext ctx) {
    int result = 1;
    long pos = ctx->pos;
-   if(!pZeroMore354(ctx)) {
+   if(!pLine(ctx)) {
       return 0;
    }
-   if(!pZeroMore358(ctx)) {
+   if(!pZeroMore360(ctx)) {
+      return 0;
+   }
+   if(!pChoice361(ctx)) {
       return 0;
    }
    return result;
 }
 
-int pZeroMore354(ParsingContext ctx) {
+int pZeroMore360(ParsingContext ctx) {
    long pos0 = ctx->pos;
    while(1) {
-      if(!pChoice353(ctx)) {
+      if(!pSequence359(ctx)) {
          ctx->pos = pos0;
          return 1;
       }
@@ -920,61 +966,34 @@ int pZeroMore354(ParsingContext ctx) {
    }
 }
 
-int pChoice353(ParsingContext ctx) {
+int pSequence359(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
+   if(!pByteChar231(ctx)) {
+      return 0;
+   }
+   if(!pLine(ctx)) {
+      return 0;
+   }
+   return result;
+}
+
+int pChoice361(ParsingContext ctx) {
    long pos1 = ctx->pos;
-   if(pByteChar351(ctx)) {
+   if(pByteChar231(ctx)) {
       return 1;
    }
    ctx->pos = pos1;
-   if(pByteChar352(ctx)) {
+   if(pNot268(ctx)) {
       return 1;
    }
    ctx->pos = pos1;
    return 0;
 }
 
-int pByteChar351(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != ' ') {
-      return 0;
-   }
-   ctx->pos++;
-   return 1;
-}
-
-int pByteChar352(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '\t') {
-      return 0;
-   }
-   ctx->pos++;
-   return 1;
-}
-
-int pZeroMore358(ParsingContext ctx) {
+int pNot268(ParsingContext ctx) {
    long pos1 = ctx->pos;
-   while(1) {
-      if(!pSequence357(ctx)) {
-         ctx->pos = pos1;
-         return 1;
-      }
-      pos1 = ctx->pos;
-   }
-}
-
-int pSequence357(ParsingContext ctx) {
-   int result = 1;
-   long pos = ctx->pos;
-   if(!pNot356(ctx)) {
-      return 0;
-   }
-   if(!pAnyChar121(ctx)) {
-      return 0;
-   }
-   return result;
-}
-
-int pNot356(ParsingContext ctx) {
-   long pos1 = ctx->pos;
-   if(pChoice355(ctx)) {
+   if(pAnyChar121(ctx)) {
       ctx->pos = pos1;
       return 0;
    }
@@ -982,21 +1001,8 @@ int pNot356(ParsingContext ctx) {
    return 1;
 }
 
-int pChoice355(ParsingContext ctx) {
-   long pos2 = ctx->pos;
-   if(pByteChar46(ctx)) {
-      return 1;
-   }
-   ctx->pos = pos2;
-   if(pByteChar231(ctx)) {
-      return 1;
-   }
-   ctx->pos = pos2;
-   return 0;
-}
-
-int pFile(ParsingContext ctx) {
-   if(pSequence364(ctx)) {
+int p_(ParsingContext ctx) {
+   if(pZeroMore367(ctx)) {
       return 1;
    }
    else {
@@ -1004,24 +1010,44 @@ int pFile(ParsingContext ctx) {
    }
 }
 
-int pSequence364(ParsingContext ctx) {
-   int result = 1;
-   long pos = ctx->pos;
-   if(!pZeroMore363(ctx)) {
-      return 0;
-   }
-   return result;
-}
-
-int pZeroMore363(ParsingContext ctx) {
+int pZeroMore367(ParsingContext ctx) {
    long pos0 = ctx->pos;
    while(1) {
-      if(!pLine(ctx)) {
+      if(!pChoice366(ctx)) {
          ctx->pos = pos0;
          return 1;
       }
       pos0 = ctx->pos;
    }
+}
+
+int pChoice366(ParsingContext ctx) {
+   long pos1 = ctx->pos;
+   if(pByteChar364(ctx)) {
+      return 1;
+   }
+   ctx->pos = pos1;
+   if(pByteChar365(ctx)) {
+      return 1;
+   }
+   ctx->pos = pos1;
+   return 0;
+}
+
+int pByteChar364(ParsingContext ctx) {
+   if(ctx->inputs[ctx->pos] != ' ') {
+      return 0;
+   }
+   ctx->pos++;
+   return 1;
+}
+
+int pByteChar365(ParsingContext ctx) {
+   if(ctx->inputs[ctx->pos] != '\t') {
+      return 0;
+   }
+   ctx->pos++;
+   return 1;
 }
 
 int main(int argc, char* const argv[]) {
