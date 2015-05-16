@@ -137,7 +137,7 @@ int pSequence345(ParsingContext ctx) {
 }
 
 int pByteChar11(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'n')) {
+   if(ctx->inputs[ctx->pos] != 'n') {
       return 0;
    }
    ctx->pos++;
@@ -145,7 +145,7 @@ int pByteChar11(ParsingContext ctx) {
 }
 
 int pByteChar5(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'u')) {
+   if(ctx->inputs[ctx->pos] != 'u') {
       return 0;
    }
    ctx->pos++;
@@ -153,7 +153,7 @@ int pByteChar5(ParsingContext ctx) {
 }
 
 int pByteChar7(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'l')) {
+   if(ctx->inputs[ctx->pos] != 'l') {
       return 0;
    }
    ctx->pos++;
@@ -215,7 +215,7 @@ int pSequence353(ParsingContext ctx) {
 }
 
 int pByteChar346(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'O')) {
+   if(ctx->inputs[ctx->pos] != 'O') {
       return 0;
    }
    ctx->pos++;
@@ -223,7 +223,7 @@ int pByteChar346(ParsingContext ctx) {
 }
 
 int pByteChar6(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'b')) {
+   if(ctx->inputs[ctx->pos] != 'b') {
       return 0;
    }
    ctx->pos++;
@@ -231,7 +231,7 @@ int pByteChar6(ParsingContext ctx) {
 }
 
 int pByteChar347(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'j')) {
+   if(ctx->inputs[ctx->pos] != 'j') {
       return 0;
    }
    ctx->pos++;
@@ -239,7 +239,7 @@ int pByteChar347(ParsingContext ctx) {
 }
 
 int pByteChar12(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'e')) {
+   if(ctx->inputs[ctx->pos] != 'e') {
       return 0;
    }
    ctx->pos++;
@@ -247,7 +247,7 @@ int pByteChar12(ParsingContext ctx) {
 }
 
 int pByteChar9(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'c')) {
+   if(ctx->inputs[ctx->pos] != 'c') {
       return 0;
    }
    ctx->pos++;
@@ -255,7 +255,7 @@ int pByteChar9(ParsingContext ctx) {
 }
 
 int pByteChar17(ParsingContext ctx) {
-   if(nez_not_match(ctx, 't')) {
+   if(ctx->inputs[ctx->pos] != 't') {
       return 0;
    }
    ctx->pos++;
@@ -263,7 +263,7 @@ int pByteChar17(ParsingContext ctx) {
 }
 
 int pByteChar348(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'I')) {
+   if(ctx->inputs[ctx->pos] != 'I') {
       return 0;
    }
    ctx->pos++;
@@ -271,7 +271,7 @@ int pByteChar348(ParsingContext ctx) {
 }
 
 int pByteChar97(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'd')) {
+   if(ctx->inputs[ctx->pos] != 'd') {
       return 0;
    }
    ctx->pos++;
@@ -279,7 +279,7 @@ int pByteChar97(ParsingContext ctx) {
 }
 
 int pByteChar284(ParsingContext ctx) {
-   if(nez_not_match(ctx, '(')) {
+   if(ctx->inputs[ctx->pos] != '(') {
       return 0;
    }
    ctx->pos++;
@@ -287,7 +287,7 @@ int pByteChar284(ParsingContext ctx) {
 }
 
 int pByteChar158(ParsingContext ctx) {
-   if(nez_not_match(ctx, '\"')) {
+   if(ctx->inputs[ctx->pos] != '\"') {
       return 0;
    }
    ctx->pos++;
@@ -324,43 +324,43 @@ int pChoice350(ParsingContext ctx) {
 
 int pByteMap106(ParsingContext ctx) {
    int result = 0;
-   if(nez_match(ctx, '0')) {
+   if(ctx->inputs[ctx->pos] == '0') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '1')) {
+   if(ctx->inputs[ctx->pos] == '1') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '2')) {
+   if(ctx->inputs[ctx->pos] == '2') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '3')) {
+   if(ctx->inputs[ctx->pos] == '3') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '4')) {
+   if(ctx->inputs[ctx->pos] == '4') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '5')) {
+   if(ctx->inputs[ctx->pos] == '5') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '6')) {
+   if(ctx->inputs[ctx->pos] == '6') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '7')) {
+   if(ctx->inputs[ctx->pos] == '7') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '8')) {
+   if(ctx->inputs[ctx->pos] == '8') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '9')) {
+   if(ctx->inputs[ctx->pos] == '9') {
       ctx->pos++;
       return 1;
    }
@@ -369,107 +369,107 @@ int pByteMap106(ParsingContext ctx) {
 
 int pByteMap349(ParsingContext ctx) {
    int result = 0;
-   if(nez_match(ctx, 'a')) {
+   if(ctx->inputs[ctx->pos] == 'a') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'b')) {
+   if(ctx->inputs[ctx->pos] == 'b') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'c')) {
+   if(ctx->inputs[ctx->pos] == 'c') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'd')) {
+   if(ctx->inputs[ctx->pos] == 'd') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'e')) {
+   if(ctx->inputs[ctx->pos] == 'e') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'f')) {
+   if(ctx->inputs[ctx->pos] == 'f') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'g')) {
+   if(ctx->inputs[ctx->pos] == 'g') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'h')) {
+   if(ctx->inputs[ctx->pos] == 'h') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'i')) {
+   if(ctx->inputs[ctx->pos] == 'i') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'j')) {
+   if(ctx->inputs[ctx->pos] == 'j') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'k')) {
+   if(ctx->inputs[ctx->pos] == 'k') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'l')) {
+   if(ctx->inputs[ctx->pos] == 'l') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'm')) {
+   if(ctx->inputs[ctx->pos] == 'm') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'n')) {
+   if(ctx->inputs[ctx->pos] == 'n') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'o')) {
+   if(ctx->inputs[ctx->pos] == 'o') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'p')) {
+   if(ctx->inputs[ctx->pos] == 'p') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'q')) {
+   if(ctx->inputs[ctx->pos] == 'q') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'r')) {
+   if(ctx->inputs[ctx->pos] == 'r') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 's')) {
+   if(ctx->inputs[ctx->pos] == 's') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 't')) {
+   if(ctx->inputs[ctx->pos] == 't') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'u')) {
+   if(ctx->inputs[ctx->pos] == 'u') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'v')) {
+   if(ctx->inputs[ctx->pos] == 'v') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'w')) {
+   if(ctx->inputs[ctx->pos] == 'w') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'x')) {
+   if(ctx->inputs[ctx->pos] == 'x') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'y')) {
+   if(ctx->inputs[ctx->pos] == 'y') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, 'z')) {
+   if(ctx->inputs[ctx->pos] == 'z') {
       ctx->pos++;
       return 1;
    }
@@ -477,7 +477,7 @@ int pByteMap349(ParsingContext ctx) {
 }
 
 int pByteChar285(ParsingContext ctx) {
-   if(nez_not_match(ctx, ')')) {
+   if(ctx->inputs[ctx->pos] != ')') {
       return 0;
    }
    ctx->pos++;
@@ -512,7 +512,7 @@ int pSequence355(ParsingContext ctx) {
 }
 
 int pByteChar16(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'r')) {
+   if(ctx->inputs[ctx->pos] != 'r') {
       return 0;
    }
    ctx->pos++;
@@ -583,7 +583,7 @@ int pSequence159(ParsingContext ctx) {
 }
 
 int pByteChar117(ParsingContext ctx) {
-   if(nez_not_match(ctx, '\\')) {
+   if(ctx->inputs[ctx->pos] != '\\') {
       return 0;
    }
    ctx->pos++;
@@ -1680,7 +1680,7 @@ int pSequence357(ParsingContext ctx) {
 }
 
 int pByteChar49(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'f')) {
+   if(ctx->inputs[ctx->pos] != 'f') {
       return 0;
    }
    ctx->pos++;
@@ -1688,7 +1688,7 @@ int pByteChar49(ParsingContext ctx) {
 }
 
 int pByteChar21(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'a')) {
+   if(ctx->inputs[ctx->pos] != 'a') {
       return 0;
    }
    ctx->pos++;
@@ -1696,7 +1696,7 @@ int pByteChar21(ParsingContext ctx) {
 }
 
 int pByteChar19(ParsingContext ctx) {
-   if(nez_not_match(ctx, 's')) {
+   if(ctx->inputs[ctx->pos] != 's') {
       return 0;
    }
    ctx->pos++;
@@ -1766,7 +1766,7 @@ int pChoice366(ParsingContext ctx) {
 }
 
 int pByteChar279(ParsingContext ctx) {
-   if(nez_not_match(ctx, '0')) {
+   if(ctx->inputs[ctx->pos] != '0') {
       return 0;
    }
    ctx->pos++;
@@ -1787,39 +1787,39 @@ int pSequence365(ParsingContext ctx) {
 
 int pByteMap362(ParsingContext ctx) {
    int result = 0;
-   if(nez_match(ctx, '1')) {
+   if(ctx->inputs[ctx->pos] == '1') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '2')) {
+   if(ctx->inputs[ctx->pos] == '2') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '3')) {
+   if(ctx->inputs[ctx->pos] == '3') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '4')) {
+   if(ctx->inputs[ctx->pos] == '4') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '5')) {
+   if(ctx->inputs[ctx->pos] == '5') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '6')) {
+   if(ctx->inputs[ctx->pos] == '6') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '7')) {
+   if(ctx->inputs[ctx->pos] == '7') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '8')) {
+   if(ctx->inputs[ctx->pos] == '8') {
       ctx->pos++;
       return 1;
    }
-   if(nez_match(ctx, '9')) {
+   if(ctx->inputs[ctx->pos] == '9') {
       ctx->pos++;
       return 1;
    }
@@ -1858,7 +1858,7 @@ int pSequence368(ParsingContext ctx) {
 }
 
 int pByteChar271(ParsingContext ctx) {
-   if(nez_not_match(ctx, '.')) {
+   if(ctx->inputs[ctx->pos] != '.') {
       return 0;
    }
    ctx->pos++;
@@ -1908,7 +1908,7 @@ int pSequence375(ParsingContext ctx) {
 }
 
 int pByteChar2(ParsingContext ctx) {
-   if(nez_not_match(ctx, '[')) {
+   if(ctx->inputs[ctx->pos] != '[') {
       return 0;
    }
    ctx->pos++;
@@ -1961,7 +1961,7 @@ int pSequence371(ParsingContext ctx) {
 }
 
 int pByteChar1(ParsingContext ctx) {
-   if(nez_not_match(ctx, ']')) {
+   if(ctx->inputs[ctx->pos] != ']') {
       return 0;
    }
    ctx->pos++;
@@ -1999,7 +1999,7 @@ int pChoice378(ParsingContext ctx) {
 }
 
 int pByteChar376(ParsingContext ctx) {
-   if(nez_not_match(ctx, ' ')) {
+   if(ctx->inputs[ctx->pos] != ' ') {
       return 0;
    }
    ctx->pos++;
@@ -2007,7 +2007,7 @@ int pByteChar376(ParsingContext ctx) {
 }
 
 int pByteChar377(ParsingContext ctx) {
-   if(nez_not_match(ctx, '\t')) {
+   if(ctx->inputs[ctx->pos] != '\t') {
       return 0;
    }
    ctx->pos++;
@@ -2015,7 +2015,7 @@ int pByteChar377(ParsingContext ctx) {
 }
 
 int pByteChar231(ParsingContext ctx) {
-   if(nez_not_match(ctx, '\n')) {
+   if(ctx->inputs[ctx->pos] != '\n') {
       return 0;
    }
    ctx->pos++;
@@ -2023,7 +2023,7 @@ int pByteChar231(ParsingContext ctx) {
 }
 
 int pByteChar230(ParsingContext ctx) {
-   if(nez_not_match(ctx, '\r')) {
+   if(ctx->inputs[ctx->pos] != '\r') {
       return 0;
    }
    ctx->pos++;
@@ -2058,7 +2058,7 @@ int pSequence386(ParsingContext ctx) {
 }
 
 int pByteChar244(ParsingContext ctx) {
-   if(nez_not_match(ctx, '{')) {
+   if(ctx->inputs[ctx->pos] != '{') {
       return 0;
    }
    ctx->pos++;
@@ -2111,7 +2111,7 @@ int pSequence381(ParsingContext ctx) {
 }
 
 int pByteChar251(ParsingContext ctx) {
-   if(nez_not_match(ctx, '}')) {
+   if(ctx->inputs[ctx->pos] != '}') {
       return 0;
    }
    ctx->pos++;
@@ -2151,7 +2151,7 @@ int pOption387(ParsingContext ctx) {
    return 1;
 }
 int pByteChar138(ParsingContext ctx) {
-   if(nez_not_match(ctx, '-')) {
+   if(ctx->inputs[ctx->pos] != '-') {
       return 0;
    }
    ctx->pos++;
@@ -2215,7 +2215,7 @@ int pSequence396(ParsingContext ctx) {
 }
 
 int pByteChar46(ParsingContext ctx) {
-   if(nez_not_match(ctx, ',')) {
+   if(ctx->inputs[ctx->pos] != ',') {
       return 0;
    }
    ctx->pos++;
@@ -2315,7 +2315,7 @@ int pChoice407(ParsingContext ctx) {
 }
 
 int pByteChar406(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'E')) {
+   if(ctx->inputs[ctx->pos] != 'E') {
       return 0;
    }
    ctx->pos++;
@@ -2344,7 +2344,7 @@ int pChoice408(ParsingContext ctx) {
 }
 
 int pByteChar65(ParsingContext ctx) {
-   if(nez_not_match(ctx, '+')) {
+   if(ctx->inputs[ctx->pos] != '+') {
       return 0;
    }
    ctx->pos++;
@@ -2446,7 +2446,7 @@ int pSequence417(ParsingContext ctx) {
 }
 
 int pByteChar305(ParsingContext ctx) {
-   if(nez_not_match(ctx, ':')) {
+   if(ctx->inputs[ctx->pos] != ':') {
       return 0;
    }
    ctx->pos++;
