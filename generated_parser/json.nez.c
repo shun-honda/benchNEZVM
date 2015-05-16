@@ -140,7 +140,7 @@ int pByteChar11(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 'n') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -148,7 +148,7 @@ int pByteChar5(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 'u') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -156,7 +156,7 @@ int pByteChar7(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 'l') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -218,7 +218,7 @@ int pByteChar346(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 'O') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -226,7 +226,7 @@ int pByteChar6(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 'b') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -234,7 +234,7 @@ int pByteChar347(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 'j') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -242,7 +242,7 @@ int pByteChar12(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 'e') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -250,7 +250,7 @@ int pByteChar9(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 'c') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -258,7 +258,7 @@ int pByteChar17(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 't') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -266,7 +266,7 @@ int pByteChar348(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 'I') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -274,7 +274,7 @@ int pByteChar97(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 'd') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -282,7 +282,7 @@ int pByteChar284(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != '(') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -290,7 +290,7 @@ int pByteChar158(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != '\"') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -355,7 +355,7 @@ int pByteMap106(ParsingContext ctx) {
       result = 1;
    }
    if(result == 1) {
-      ctx->pos++;
+      nez_consume(ctx);
    }
    return result;
 }
@@ -441,7 +441,7 @@ int pByteMap349(ParsingContext ctx) {
       result = 1;
    }
    if(result == 1) {
-      ctx->pos++;
+      nez_consume(ctx);
    }
    return result;
 }
@@ -450,7 +450,7 @@ int pByteChar285(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != ')') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -485,7 +485,7 @@ int pByteChar16(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 'r') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -556,7 +556,7 @@ int pByteChar117(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != '\\') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -1362,7 +1362,7 @@ int pAnyChar121(ParsingContext ctx) {
       result = 1;
    }
    if(result == 1) {
-      ctx->pos++;
+      nez_consume(ctx);
    }
    return result;
 }
@@ -1401,7 +1401,7 @@ int pByteChar49(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 'f') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -1409,7 +1409,7 @@ int pByteChar21(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 'a') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -1417,7 +1417,7 @@ int pByteChar19(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 's') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -1487,7 +1487,7 @@ int pByteChar279(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != '0') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -1533,7 +1533,7 @@ int pByteMap362(ParsingContext ctx) {
       result = 1;
    }
    if(result == 1) {
-      ctx->pos++;
+      nez_consume(ctx);
    }
    return result;
 }
@@ -1573,7 +1573,7 @@ int pByteChar271(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != '.') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -1623,7 +1623,7 @@ int pByteChar2(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != '[') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -1676,7 +1676,7 @@ int pByteChar1(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != ']') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -1714,7 +1714,7 @@ int pByteChar376(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != ' ') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -1722,7 +1722,7 @@ int pByteChar377(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != '\t') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -1730,7 +1730,7 @@ int pByteChar231(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != '\n') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -1738,7 +1738,7 @@ int pByteChar230(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != '\r') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -1773,7 +1773,7 @@ int pByteChar244(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != '{') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -1826,7 +1826,7 @@ int pByteChar251(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != '}') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -1866,7 +1866,7 @@ int pByteChar138(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != '-') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -1930,7 +1930,7 @@ int pByteChar46(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != ',') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -2030,7 +2030,7 @@ int pByteChar406(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != 'E') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -2059,7 +2059,7 @@ int pByteChar65(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != '+') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -2161,7 +2161,7 @@ int pByteChar305(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != ':') {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
