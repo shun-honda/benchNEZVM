@@ -119,6 +119,8 @@ int pNull(ParsingContext ctx) {
 }
 
 int pSequence345(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pByteChar11(ctx)) {
       return 0;
    }
@@ -131,30 +133,30 @@ int pSequence345(ParsingContext ctx) {
    if(!pByteChar7(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pByteChar11(ParsingContext ctx) {
-   if(*ctx->cur != 'n') {
+   if(ctx->inputs[ctx->pos] != 'n') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar5(ParsingContext ctx) {
-   if(*ctx->cur != 'u') {
+   if(ctx->inputs[ctx->pos] != 'u') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar7(ParsingContext ctx) {
-   if(*ctx->cur != 'l') {
+   if(ctx->inputs[ctx->pos] != 'l') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
@@ -168,6 +170,8 @@ int pObjectId(ParsingContext ctx) {
 }
 
 int pSequence353(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pByteChar346(ctx)) {
       return 0;
    }
@@ -207,86 +211,86 @@ int pSequence353(ParsingContext ctx) {
    if(!pByteChar285(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pByteChar346(ParsingContext ctx) {
-   if(*ctx->cur != 'O') {
+   if(ctx->inputs[ctx->pos] != 'O') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar6(ParsingContext ctx) {
-   if(*ctx->cur != 'b') {
+   if(ctx->inputs[ctx->pos] != 'b') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar347(ParsingContext ctx) {
-   if(*ctx->cur != 'j') {
+   if(ctx->inputs[ctx->pos] != 'j') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar12(ParsingContext ctx) {
-   if(*ctx->cur != 'e') {
+   if(ctx->inputs[ctx->pos] != 'e') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar9(ParsingContext ctx) {
-   if(*ctx->cur != 'c') {
+   if(ctx->inputs[ctx->pos] != 'c') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar17(ParsingContext ctx) {
-   if(*ctx->cur != 't') {
+   if(ctx->inputs[ctx->pos] != 't') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar348(ParsingContext ctx) {
-   if(*ctx->cur != 'I') {
+   if(ctx->inputs[ctx->pos] != 'I') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar97(ParsingContext ctx) {
-   if(*ctx->cur != 'd') {
+   if(ctx->inputs[ctx->pos] != 'd') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar284(ParsingContext ctx) {
-   if(*ctx->cur != '(') {
+   if(ctx->inputs[ctx->pos] != '(') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar158(ParsingContext ctx) {
-   if(*ctx->cur != '\"') {
+   if(ctx->inputs[ctx->pos] != '\"') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
@@ -294,186 +298,158 @@ int pOneMore351(ParsingContext ctx) {
    if(!pChoice350(ctx)) {
       return 0;
    }
-   char* c0 = ctx->cur;
+   long pos0 = ctx->pos;
    while(1) {
       if(!pChoice350(ctx)) {
-         ctx->cur = c0;
+         ctx->pos = pos0;
          return 1;
       }
-      c0 = ctx->cur;
+      pos0 = ctx->pos;
    }
 }
 
 int pChoice350(ParsingContext ctx) {
-   char* c1 = ctx->cur;
+   long pos1 = ctx->pos;
    if(pByteMap106(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pByteMap349(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    return 0;
 }
 
 int pByteMap106(ParsingContext ctx) {
-   if(*ctx->cur =='0') {
-      ctx->cur++;
-      return 1;
+   int result = 0;
+   if(ctx->inputs[ctx->pos] =='0') {
+      result = 1;
    }
-   if(*ctx->cur =='1') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='1') {
+      result = 1;
    }
-   if(*ctx->cur =='2') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='2') {
+      result = 1;
    }
-   if(*ctx->cur =='3') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='3') {
+      result = 1;
    }
-   if(*ctx->cur =='4') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='4') {
+      result = 1;
    }
-   if(*ctx->cur =='5') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='5') {
+      result = 1;
    }
-   if(*ctx->cur =='6') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='6') {
+      result = 1;
    }
-   if(*ctx->cur =='7') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='7') {
+      result = 1;
    }
-   if(*ctx->cur =='8') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='8') {
+      result = 1;
    }
-   if(*ctx->cur =='9') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='9') {
+      result = 1;
    }
-   return 0;
+   if(result == 1) {
+      ctx->pos++;
+   }
+   return result;
 }
 
 int pByteMap349(ParsingContext ctx) {
-   if(*ctx->cur =='a') {
-      ctx->cur++;
-      return 1;
+   int result = 0;
+   if(ctx->inputs[ctx->pos] =='a') {
+      result = 1;
    }
-   if(*ctx->cur =='b') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='b') {
+      result = 1;
    }
-   if(*ctx->cur =='c') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='c') {
+      result = 1;
    }
-   if(*ctx->cur =='d') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='d') {
+      result = 1;
    }
-   if(*ctx->cur =='e') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='e') {
+      result = 1;
    }
-   if(*ctx->cur =='f') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='f') {
+      result = 1;
    }
-   if(*ctx->cur =='g') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='g') {
+      result = 1;
    }
-   if(*ctx->cur =='h') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='h') {
+      result = 1;
    }
-   if(*ctx->cur =='i') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='i') {
+      result = 1;
    }
-   if(*ctx->cur =='j') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='j') {
+      result = 1;
    }
-   if(*ctx->cur =='k') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='k') {
+      result = 1;
    }
-   if(*ctx->cur =='l') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='l') {
+      result = 1;
    }
-   if(*ctx->cur =='m') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='m') {
+      result = 1;
    }
-   if(*ctx->cur =='n') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='n') {
+      result = 1;
    }
-   if(*ctx->cur =='o') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='o') {
+      result = 1;
    }
-   if(*ctx->cur =='p') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='p') {
+      result = 1;
    }
-   if(*ctx->cur =='q') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='q') {
+      result = 1;
    }
-   if(*ctx->cur =='r') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='r') {
+      result = 1;
    }
-   if(*ctx->cur =='s') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='s') {
+      result = 1;
    }
-   if(*ctx->cur =='t') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='t') {
+      result = 1;
    }
-   if(*ctx->cur =='u') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='u') {
+      result = 1;
    }
-   if(*ctx->cur =='v') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='v') {
+      result = 1;
    }
-   if(*ctx->cur =='w') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='w') {
+      result = 1;
    }
-   if(*ctx->cur =='x') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='x') {
+      result = 1;
    }
-   if(*ctx->cur =='y') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='y') {
+      result = 1;
    }
-   if(*ctx->cur =='z') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='z') {
+      result = 1;
    }
-   return 0;
+   if(result == 1) {
+      ctx->pos++;
+   }
+   return result;
 }
 
 int pByteChar285(ParsingContext ctx) {
-   if(*ctx->cur != ')') {
+   if(ctx->inputs[ctx->pos] != ')') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
@@ -487,6 +463,8 @@ int pTrue(ParsingContext ctx) {
 }
 
 int pSequence355(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pByteChar17(ctx)) {
       return 0;
    }
@@ -499,14 +477,14 @@ int pSequence355(ParsingContext ctx) {
    if(!pByteChar12(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pByteChar16(ParsingContext ctx) {
-   if(*ctx->cur != 'r') {
+   if(ctx->inputs[ctx->pos] != 'r') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
@@ -520,6 +498,8 @@ int pString(ParsingContext ctx) {
 }
 
 int pSequence165(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pByteChar158(ctx)) {
       return 0;
    }
@@ -529,91 +509,865 @@ int pSequence165(ParsingContext ctx) {
    if(!pByteChar158(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pZeroMore163(ParsingContext ctx) {
-   char* c0 = ctx->cur;
+   long pos0 = ctx->pos;
    while(1) {
       if(!pChoice162(ctx)) {
-         ctx->cur = c0;
+         ctx->pos = pos0;
          return 1;
       }
-      c0 = ctx->cur;
+      pos0 = ctx->pos;
    }
 }
 
 int pChoice162(ParsingContext ctx) {
-   char* c1 = ctx->cur;
+   long pos1 = ctx->pos;
    if(pSequence159(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pSequence119(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pSequence161(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    return 0;
 }
 
 int pSequence159(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pByteChar117(ctx)) {
       return 0;
    }
    if(!pByteChar158(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pByteChar117(ParsingContext ctx) {
-   if(*ctx->cur != '\\') {
+   if(ctx->inputs[ctx->pos] != '\\') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pSequence119(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pByteChar117(ctx)) {
       return 0;
    }
    if(!pByteChar117(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pSequence161(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pNot160(ctx)) {
       return 0;
    }
    if(!pAnyChar121(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pNot160(ParsingContext ctx) {
-   char* c1 = ctx->cur;
+   long pos1 = ctx->pos;
    if(pByteChar158(ctx)) {
-      ctx->cur = c1;
+      ctx->pos = pos1;
       return 0;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    return 1;
 }
 
 int pAnyChar121(ParsingContext ctx) {
-   if(*ctx->cur == 0) {
-      return 0;
+   int result = 0;
+   if(ctx->inputs[ctx->pos] == (char)0) {
+      result = 1;
    }
-   ctx->cur++;
-   return 1;
+   if(ctx->inputs[ctx->pos] == (char)1) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)2) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)3) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)4) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)5) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)6) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)7) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)8) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)9) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)10) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)11) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)12) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)13) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)14) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)15) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)16) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)17) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)18) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)19) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)20) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)21) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)22) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)23) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)24) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)25) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)26) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)27) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)28) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)29) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)30) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)31) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)32) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)33) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)34) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)35) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)36) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)37) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)38) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)39) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)40) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)41) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)42) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)43) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)44) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)45) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)46) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)47) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)48) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)49) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)50) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)51) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)52) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)53) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)54) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)55) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)56) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)57) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)58) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)59) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)60) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)61) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)62) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)63) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)64) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)65) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)66) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)67) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)68) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)69) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)70) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)71) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)72) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)73) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)74) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)75) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)76) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)77) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)78) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)79) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)80) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)81) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)82) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)83) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)84) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)85) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)86) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)87) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)88) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)89) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)90) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)91) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)92) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)93) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)94) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)95) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)96) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)97) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)98) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)99) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)100) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)101) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)102) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)103) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)104) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)105) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)106) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)107) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)108) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)109) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)110) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)111) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)112) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)113) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)114) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)115) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)116) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)117) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)118) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)119) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)120) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)121) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)122) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)123) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)124) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)125) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)126) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)127) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)128) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)129) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)130) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)131) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)132) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)133) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)134) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)135) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)136) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)137) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)138) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)139) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)140) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)141) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)142) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)143) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)144) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)145) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)146) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)147) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)148) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)149) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)150) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)151) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)152) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)153) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)154) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)155) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)156) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)157) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)158) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)159) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)160) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)161) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)162) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)163) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)164) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)165) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)166) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)167) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)168) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)169) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)170) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)171) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)172) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)173) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)174) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)175) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)176) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)177) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)178) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)179) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)180) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)181) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)182) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)183) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)184) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)185) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)186) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)187) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)188) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)189) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)190) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)191) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)192) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)193) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)194) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)195) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)196) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)197) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)198) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)199) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)200) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)201) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)202) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)203) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)204) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)205) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)206) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)207) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)208) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)209) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)210) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)211) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)212) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)213) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)214) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)215) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)216) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)217) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)218) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)219) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)220) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)221) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)222) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)223) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)224) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)225) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)226) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)227) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)228) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)229) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)230) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)231) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)232) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)233) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)234) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)235) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)236) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)237) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)238) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)239) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)240) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)241) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)242) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)243) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)244) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)245) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)246) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)247) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)248) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)249) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)250) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)251) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)252) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)253) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)254) {
+      result = 1;
+   }
+   if(ctx->inputs[ctx->pos] == (char)255) {
+      result = 1;
+   }
+   if(result == 1) {
+      ctx->pos++;
+   }
+   return result;
 }
 
 int pFalse(ParsingContext ctx) {
@@ -626,6 +1380,8 @@ int pFalse(ParsingContext ctx) {
 }
 
 int pSequence357(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pByteChar49(ctx)) {
       return 0;
    }
@@ -641,30 +1397,30 @@ int pSequence357(ParsingContext ctx) {
    if(!pByteChar12(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pByteChar49(ParsingContext ctx) {
-   if(*ctx->cur != 'f') {
+   if(ctx->inputs[ctx->pos] != 'f') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar21(ParsingContext ctx) {
-   if(*ctx->cur != 'a') {
+   if(ctx->inputs[ctx->pos] != 'a') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar19(ParsingContext ctx) {
-   if(*ctx->cur != 's') {
+   if(ctx->inputs[ctx->pos] != 's') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
@@ -678,23 +1434,25 @@ int pChunk(ParsingContext ctx) {
 }
 
 int pSequence361(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pValue(ctx)) {
       return 0;
    }
    if(!pZeroMore360(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pZeroMore360(ParsingContext ctx) {
-   char* c0 = ctx->cur;
+   long pos0 = ctx->pos;
    while(1) {
       if(!pS(ctx)) {
-         ctx->cur = c0;
+         ctx->pos = pos0;
          return 1;
       }
-      c0 = ctx->cur;
+      pos0 = ctx->pos;
    }
 }
 
@@ -717,84 +1475,81 @@ int pINT(ParsingContext ctx) {
 }
 
 int pChoice366(ParsingContext ctx) {
-   char* c1 = ctx->cur;
+   long pos1 = ctx->pos;
    if(pByteChar279(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pSequence365(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    return 0;
 }
 
 int pByteChar279(ParsingContext ctx) {
-   if(*ctx->cur != '0') {
+   if(ctx->inputs[ctx->pos] != '0') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pSequence365(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pByteMap362(ctx)) {
       return 0;
    }
    if(!pZeroMore364(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pByteMap362(ParsingContext ctx) {
-   if(*ctx->cur =='1') {
-      ctx->cur++;
-      return 1;
+   int result = 0;
+   if(ctx->inputs[ctx->pos] =='1') {
+      result = 1;
    }
-   if(*ctx->cur =='2') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='2') {
+      result = 1;
    }
-   if(*ctx->cur =='3') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='3') {
+      result = 1;
    }
-   if(*ctx->cur =='4') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='4') {
+      result = 1;
    }
-   if(*ctx->cur =='5') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='5') {
+      result = 1;
    }
-   if(*ctx->cur =='6') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='6') {
+      result = 1;
    }
-   if(*ctx->cur =='7') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='7') {
+      result = 1;
    }
-   if(*ctx->cur =='8') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='8') {
+      result = 1;
    }
-   if(*ctx->cur =='9') {
-      ctx->cur++;
-      return 1;
+   if(ctx->inputs[ctx->pos] =='9') {
+      result = 1;
    }
-   return 0;
+   if(result == 1) {
+      ctx->pos++;
+   }
+   return result;
 }
 
 int pZeroMore364(ParsingContext ctx) {
-   char* c1 = ctx->cur;
+   long pos1 = ctx->pos;
    while(1) {
       if(!pDIGIT(ctx)) {
-         ctx->cur = c1;
+         ctx->pos = pos1;
          return 1;
       }
-      c1 = ctx->cur;
+      pos1 = ctx->pos;
    }
 }
 
@@ -808,20 +1563,22 @@ int pFRAC(ParsingContext ctx) {
 }
 
 int pSequence368(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pByteChar271(ctx)) {
       return 0;
    }
    if(!pOneMore367(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pByteChar271(ParsingContext ctx) {
-   if(*ctx->cur != '.') {
+   if(ctx->inputs[ctx->pos] != '.') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
@@ -829,13 +1586,13 @@ int pOneMore367(ParsingContext ctx) {
    if(!pDIGIT(ctx)) {
       return 0;
    }
-   char* c0 = ctx->cur;
+   long pos0 = ctx->pos;
    while(1) {
       if(!pDIGIT(ctx)) {
-         ctx->cur = c0;
+         ctx->pos = pos0;
          return 1;
       }
-      c0 = ctx->cur;
+      pos0 = ctx->pos;
    }
 }
 
@@ -849,6 +1606,8 @@ int pArray(ParsingContext ctx) {
 }
 
 int pSequence375(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pByteChar2(ctx)) {
       return 0;
    }
@@ -861,26 +1620,28 @@ int pSequence375(ParsingContext ctx) {
    if(!pByteChar1(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pByteChar2(ParsingContext ctx) {
-   if(*ctx->cur != '[') {
+   if(ctx->inputs[ctx->pos] != '[') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pOption374(ParsingContext ctx) {
-   char* c0 = ctx->cur;
+   long pos0 = ctx->pos;
    if(pSequence373(ctx)) {
       return 1;
    }
-   ctx->cur = c0;
+   ctx->pos = pos0;
    return 1;
 }
 int pSequence373(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pZeroMore360(ctx)) {
       return 0;
    }
@@ -890,35 +1651,37 @@ int pSequence373(ParsingContext ctx) {
    if(!pZeroMore372(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pZeroMore372(ParsingContext ctx) {
-   char* c0 = ctx->cur;
+   long pos0 = ctx->pos;
    while(1) {
       if(!pSequence371(ctx)) {
-         ctx->cur = c0;
+         ctx->pos = pos0;
          return 1;
       }
-      c0 = ctx->cur;
+      pos0 = ctx->pos;
    }
 }
 
 int pSequence371(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pVALUESEP(ctx)) {
       return 0;
    }
    if(!pValue(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pByteChar1(ParsingContext ctx) {
-   if(*ctx->cur != ']') {
+   if(ctx->inputs[ctx->pos] != ']') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
@@ -932,55 +1695,55 @@ int pS(ParsingContext ctx) {
 }
 
 int pChoice378(ParsingContext ctx) {
-   char* c1 = ctx->cur;
+   long pos1 = ctx->pos;
    if(pByteChar376(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pByteChar377(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pByteChar231(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pByteChar230(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    return 0;
 }
 
 int pByteChar376(ParsingContext ctx) {
-   if(*ctx->cur != ' ') {
+   if(ctx->inputs[ctx->pos] != ' ') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar377(ParsingContext ctx) {
-   if(*ctx->cur != '\t') {
+   if(ctx->inputs[ctx->pos] != '\t') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar231(ParsingContext ctx) {
-   if(*ctx->cur != '\n') {
+   if(ctx->inputs[ctx->pos] != '\n') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pByteChar230(ParsingContext ctx) {
-   if(*ctx->cur != '\r') {
+   if(ctx->inputs[ctx->pos] != '\r') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
@@ -994,6 +1757,8 @@ int pJSONObject(ParsingContext ctx) {
 }
 
 int pSequence386(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pByteChar244(ctx)) {
       return 0;
    }
@@ -1006,26 +1771,28 @@ int pSequence386(ParsingContext ctx) {
    if(!pByteChar251(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pByteChar244(ParsingContext ctx) {
-   if(*ctx->cur != '{') {
+   if(ctx->inputs[ctx->pos] != '{') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pOption384(ParsingContext ctx) {
-   char* c0 = ctx->cur;
+   long pos0 = ctx->pos;
    if(pSequence383(ctx)) {
       return 1;
    }
-   ctx->cur = c0;
+   ctx->pos = pos0;
    return 1;
 }
 int pSequence383(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pZeroMore360(ctx)) {
       return 0;
    }
@@ -1035,35 +1802,37 @@ int pSequence383(ParsingContext ctx) {
    if(!pZeroMore382(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pZeroMore382(ParsingContext ctx) {
-   char* c0 = ctx->cur;
+   long pos0 = ctx->pos;
    while(1) {
       if(!pSequence381(ctx)) {
-         ctx->cur = c0;
+         ctx->pos = pos0;
          return 1;
       }
-      c0 = ctx->cur;
+      pos0 = ctx->pos;
    }
 }
 
 int pSequence381(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pVALUESEP(ctx)) {
       return 0;
    }
    if(!pMember(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pByteChar251(ParsingContext ctx) {
-   if(*ctx->cur != '}') {
+   if(ctx->inputs[ctx->pos] != '}') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
@@ -1077,6 +1846,8 @@ int pNumber(ParsingContext ctx) {
 }
 
 int pSequence395(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pOption387(ctx)) {
       return 0;
    }
@@ -1086,53 +1857,55 @@ int pSequence395(ParsingContext ctx) {
    if(!pChoice394(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pOption387(ParsingContext ctx) {
-   char* c0 = ctx->cur;
+   long pos0 = ctx->pos;
    if(pByteChar138(ctx)) {
       return 1;
    }
-   ctx->cur = c0;
+   ctx->pos = pos0;
    return 1;
 }
 int pByteChar138(ParsingContext ctx) {
-   if(*ctx->cur != '-') {
+   if(ctx->inputs[ctx->pos] != '-') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pChoice394(ParsingContext ctx) {
-   char* c1 = ctx->cur;
+   long pos1 = ctx->pos;
    if(pSequence393(ctx)) {
       return 1;
    }
-   ctx->cur = c1; {
+   ctx->pos = pos1; {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    return 0;
 }
 
 int pSequence393(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pFRAC(ctx)) {
       return 0;
    }
    if(!pOption391(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pOption391(ParsingContext ctx) {
-   char* c1 = ctx->cur;
+   long pos1 = ctx->pos;
    if(pEXP(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    return 1;
 }
 int pVALUESEP(ParsingContext ctx) {
@@ -1145,6 +1918,8 @@ int pVALUESEP(ParsingContext ctx) {
 }
 
 int pSequence396(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pZeroMore360(ctx)) {
       return 0;
    }
@@ -1154,14 +1929,14 @@ int pSequence396(ParsingContext ctx) {
    if(!pZeroMore360(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pByteChar46(ParsingContext ctx) {
-   if(*ctx->cur != ',') {
+   if(ctx->inputs[ctx->pos] != ',') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
@@ -1175,39 +1950,39 @@ int pValue(ParsingContext ctx) {
 }
 
 int pChoice405(ParsingContext ctx) {
-   char* c1 = ctx->cur;
+   long pos1 = ctx->pos;
    if(pString(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pNumber(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pJSONObject(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pArray(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pNull(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pTrue(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pFalse(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pObjectId(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    return 0;
 }
 
@@ -1230,6 +2005,8 @@ int pEXP(ParsingContext ctx) {
 }
 
 int pSequence410(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pChoice407(ctx)) {
       return 0;
    }
@@ -1239,56 +2016,56 @@ int pSequence410(ParsingContext ctx) {
    if(!pOneMore367(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pChoice407(ParsingContext ctx) {
-   char* c1 = ctx->cur;
+   long pos1 = ctx->pos;
    if(pByteChar406(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pByteChar12(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    return 0;
 }
 
 int pByteChar406(ParsingContext ctx) {
-   if(*ctx->cur != 'E') {
+   if(ctx->inputs[ctx->pos] != 'E') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
 int pOption409(ParsingContext ctx) {
-   char* c1 = ctx->cur;
+   long pos1 = ctx->pos;
    if(pChoice408(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    return 1;
 }
 int pChoice408(ParsingContext ctx) {
-   char* c2 = ctx->cur;
+   long pos2 = ctx->pos;
    if(pByteChar138(ctx)) {
       return 1;
    }
-   ctx->cur = c2;
+   ctx->pos = pos2;
    if(pByteChar65(ctx)) {
       return 1;
    }
-   ctx->cur = c2;
+   ctx->pos = pos2;
    return 0;
 }
 
 int pByteChar65(ParsingContext ctx) {
-   if(*ctx->cur != '+') {
+   if(ctx->inputs[ctx->pos] != '+') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
@@ -1311,6 +2088,8 @@ int pFile(ParsingContext ctx) {
 }
 
 int pSequence412(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pZeroMore360(ctx)) {
       return 0;
    }
@@ -1320,19 +2099,19 @@ int pSequence412(ParsingContext ctx) {
    if(!pZeroMore360(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pChoice411(ParsingContext ctx) {
-   char* c1 = ctx->cur;
+   long pos1 = ctx->pos;
    if(pJSONObject(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    if(pArray(ctx)) {
       return 1;
    }
-   ctx->cur = c1;
+   ctx->pos = pos1;
    return 0;
 }
 
@@ -1346,6 +2125,8 @@ int pMember(ParsingContext ctx) {
 }
 
 int pSequence416(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pString(ctx)) {
       return 0;
    }
@@ -1355,7 +2136,7 @@ int pSequence416(ParsingContext ctx) {
    if(!pValue(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pNAMESEP(ParsingContext ctx) {
@@ -1368,6 +2149,8 @@ int pNAMESEP(ParsingContext ctx) {
 }
 
 int pSequence417(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
    if(!pZeroMore360(ctx)) {
       return 0;
    }
@@ -1377,14 +2160,14 @@ int pSequence417(ParsingContext ctx) {
    if(!pZeroMore360(ctx)) {
       return 0;
    }
-   return 1;
+   return result;
 }
 
 int pByteChar305(ParsingContext ctx) {
-   if(*ctx->cur != ':') {
+   if(ctx->inputs[ctx->pos] != ':') {
       return 0;
    }
-   ctx->cur++;
+   ctx->pos++;
    return 1;
 }
 
@@ -1395,7 +2178,7 @@ int main(int argc, char* const argv[]) {
    if(!pFile(ctx)) {
       nez_PrintErrorInfo("parse error");
    }
-   else if((ctx->cur - ctx->inputs) != ctx->input_size) {
+   else if((ctx->pos) != ctx->input_size) {
       nez_PrintErrorInfo("unconsume");
    }
    else {
