@@ -15,6 +15,21 @@ void nez_consume(ParsingContext ctx) {
   }
 }
 
+void nez_backtrack(ParsingContext ctx, long pos) {
+  if(pos != ctx->pos) {
+    if(pos < ctx->input_size) {
+      // if(pos > ctx->pos) {
+      //   nez_PrintErrorInfo("backtrack error");
+      // }
+      ctx->pos = pos;
+    }
+    else {
+      fprintf(stderr, "%ld, %ld, %ld\n", ctx->pos, ctx->input_size, pos);
+      nez_PrintErrorInfo("backtrack error");
+    }
+  }
+}
+
 void dump_pego(ParsingObject *pego, char *source, int level) {
   int i;
   long j;

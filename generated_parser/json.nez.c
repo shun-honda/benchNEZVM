@@ -301,7 +301,7 @@ int pOneMore351(ParsingContext ctx) {
    long pos0 = ctx->pos;
    while(1) {
       if(!pChoice350(ctx)) {
-         ctx->pos = pos0;
+         nez_backtrack(ctx, pos0);
          return 1;
       }
       if(ctx->pos == pos0) { return 1; }
@@ -314,11 +314,11 @@ int pChoice350(ParsingContext ctx) {
    if(pByteMap106(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pByteMap349(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 0;
 }
 
@@ -516,7 +516,7 @@ int pSequence165(ParsingContext ctx) {
 int pZeroMore163(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(!pChoice162(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 1;
    }
    if(ctx->pos == pos0) { return 1; }
@@ -528,15 +528,15 @@ int pChoice162(ParsingContext ctx) {
    if(pSequence159(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pSequence119(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pSequence161(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 0;
 }
 
@@ -587,10 +587,10 @@ int pSequence161(ParsingContext ctx) {
 int pNot160(ParsingContext ctx) {
    long pos1 = ctx->pos;
    if(pByteChar158(ctx)) {
-      ctx->pos = pos1;
+      nez_backtrack(ctx, pos1);
       return 0;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 1;
 }
 
@@ -1445,7 +1445,7 @@ int pSequence361(ParsingContext ctx) {
 int pZeroMore360(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(!pS(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 1;
    }
    if(ctx->pos == pos0) { return 1; }
@@ -1475,11 +1475,11 @@ int pChoice366(ParsingContext ctx) {
    if(pByteChar279(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pSequence365(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 0;
 }
 
@@ -1541,7 +1541,7 @@ int pByteMap362(ParsingContext ctx) {
 int pZeroMore364(ParsingContext ctx) {
    long pos1 = ctx->pos;
    if(!pDIGIT(ctx)) {
-      ctx->pos = pos1;
+      nez_backtrack(ctx, pos1);
       return 1;
    }
    if(ctx->pos == pos1) { return 1; }
@@ -1584,7 +1584,7 @@ int pOneMore367(ParsingContext ctx) {
    long pos0 = ctx->pos;
    while(1) {
       if(!pDIGIT(ctx)) {
-         ctx->pos = pos0;
+         nez_backtrack(ctx, pos0);
          return 1;
       }
       if(ctx->pos == pos0) { return 1; }
@@ -1632,7 +1632,7 @@ int pOption374(ParsingContext ctx) {
    if(pSequence373(ctx)) {
       return 1;
    }
-   ctx->pos = pos0;
+   nez_backtrack(ctx, pos0);
    return 1;
 }
 int pSequence373(ParsingContext ctx) {
@@ -1653,7 +1653,7 @@ int pSequence373(ParsingContext ctx) {
 int pZeroMore372(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(!pSequence371(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 1;
    }
    if(ctx->pos == pos0) { return 1; }
@@ -1694,19 +1694,19 @@ int pChoice378(ParsingContext ctx) {
    if(pByteChar376(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pByteChar377(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pByteChar231(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pByteChar230(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 0;
 }
 
@@ -1782,7 +1782,7 @@ int pOption384(ParsingContext ctx) {
    if(pSequence383(ctx)) {
       return 1;
    }
-   ctx->pos = pos0;
+   nez_backtrack(ctx, pos0);
    return 1;
 }
 int pSequence383(ParsingContext ctx) {
@@ -1803,7 +1803,7 @@ int pSequence383(ParsingContext ctx) {
 int pZeroMore382(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(!pSequence381(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 1;
    }
    if(ctx->pos == pos0) { return 1; }
@@ -1859,7 +1859,7 @@ int pOption387(ParsingContext ctx) {
    if(pByteChar138(ctx)) {
       return 1;
    }
-   ctx->pos = pos0;
+   nez_backtrack(ctx, pos0);
    return 1;
 }
 int pByteChar138(ParsingContext ctx) {
@@ -1875,10 +1875,10 @@ int pChoice394(ParsingContext ctx) {
    if(pSequence393(ctx)) {
       return 1;
    }
-   ctx->pos = pos1; {
+   nez_backtrack(ctx, pos1); {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 0;
 }
 
@@ -1899,7 +1899,7 @@ int pOption391(ParsingContext ctx) {
    if(pEXP(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 1;
 }
 int pVALUESEP(ParsingContext ctx) {
@@ -1948,35 +1948,35 @@ int pChoice405(ParsingContext ctx) {
    if(pString(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pNumber(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pJSONObject(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pArray(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pNull(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pTrue(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pFalse(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pObjectId(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 0;
 }
 
@@ -2018,11 +2018,11 @@ int pChoice407(ParsingContext ctx) {
    if(pByteChar406(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pByteChar12(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 0;
 }
 
@@ -2039,7 +2039,7 @@ int pOption409(ParsingContext ctx) {
    if(pChoice408(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 1;
 }
 int pChoice408(ParsingContext ctx) {
@@ -2047,11 +2047,11 @@ int pChoice408(ParsingContext ctx) {
    if(pByteChar138(ctx)) {
       return 1;
    }
-   ctx->pos = pos2;
+   nez_backtrack(ctx, pos2);
    if(pByteChar65(ctx)) {
       return 1;
    }
-   ctx->pos = pos2;
+   nez_backtrack(ctx, pos2);
    return 0;
 }
 
@@ -2101,11 +2101,11 @@ int pChoice411(ParsingContext ctx) {
    if(pJSONObject(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pArray(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 0;
 }
 
