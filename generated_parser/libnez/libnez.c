@@ -8,8 +8,9 @@ void nez_PrintErrorInfo(const char *errmsg) {
 
 void nez_consume(ParsingContext ctx) {
   if(ctx->pos < ctx->input_size) {
-    // fprintf(stderr, "%ld\n", ctx->pos);
-    ctx->pos++;
+    if(ctx->inputs[ctx->pos] != 0) {
+      ctx->pos++;
+    }
   }
   else {
     nez_PrintErrorInfo("input over flow");
@@ -19,9 +20,9 @@ void nez_consume(ParsingContext ctx) {
 void nez_backtrack(ParsingContext ctx, long pos) {
   if(pos != ctx->pos) {
     if(pos < ctx->input_size) {
-      // if(pos > ctx->pos) {
-      //   nez_PrintErrorInfo("backtrack error");
-      // }
+      if(pos > ctx->pos) {
+        nez_PrintErrorInfo("backtrack error");
+      }
       ctx->pos = pos;
     }
     else {
