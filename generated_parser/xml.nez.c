@@ -1591,82 +1591,82 @@ int pChoice380(ParsingContext ctx) {
 
 int pByteMap377(ParsingContext ctx) {
    int result = 0;
-   if(!nez_not_match(ctx, 'A')) {
+   if(nez_match(ctx, 'A')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'B')) {
+   if(nez_match(ctx, 'B')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'C')) {
+   if(nez_match(ctx, 'C')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'D')) {
+   if(nez_match(ctx, 'D')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'E')) {
+   if(nez_match(ctx, 'E')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'F')) {
+   if(nez_match(ctx, 'F')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'G')) {
+   if(nez_match(ctx, 'G')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'H')) {
+   if(nez_match(ctx, 'H')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'I')) {
+   if(nez_match(ctx, 'I')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'J')) {
+   if(nez_match(ctx, 'J')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'K')) {
+   if(nez_match(ctx, 'K')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'L')) {
+   if(nez_match(ctx, 'L')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'M')) {
+   if(nez_match(ctx, 'M')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'N')) {
+   if(nez_match(ctx, 'N')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'O')) {
+   if(nez_match(ctx, 'O')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'P')) {
+   if(nez_match(ctx, 'P')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'Q')) {
+   if(nez_match(ctx, 'Q')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'R')) {
+   if(nez_match(ctx, 'R')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'S')) {
+   if(nez_match(ctx, 'S')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'T')) {
+   if(nez_match(ctx, 'T')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'U')) {
+   if(nez_match(ctx, 'U')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'V')) {
+   if(nez_match(ctx, 'V')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'W')) {
+   if(nez_match(ctx, 'W')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'X')) {
+   if(nez_match(ctx, 'X')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'Y')) {
+   if(nez_match(ctx, 'Y')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'Z')) {
+   if(nez_match(ctx, 'Z')) {
       result = 1;
    }
    if(result == 1) {
@@ -1685,82 +1685,82 @@ int pByteChar378(ParsingContext ctx) {
 
 int pByteMap379(ParsingContext ctx) {
    int result = 0;
-   if(!nez_not_match(ctx, 'a')) {
+   if(nez_match(ctx, 'a')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'b')) {
+   if(nez_match(ctx, 'b')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'c')) {
+   if(nez_match(ctx, 'c')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'd')) {
+   if(nez_match(ctx, 'd')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'e')) {
+   if(nez_match(ctx, 'e')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'f')) {
+   if(nez_match(ctx, 'f')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'g')) {
+   if(nez_match(ctx, 'g')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'h')) {
+   if(nez_match(ctx, 'h')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'i')) {
+   if(nez_match(ctx, 'i')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'j')) {
+   if(nez_match(ctx, 'j')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'k')) {
+   if(nez_match(ctx, 'k')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'l')) {
+   if(nez_match(ctx, 'l')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'm')) {
+   if(nez_match(ctx, 'm')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'n')) {
+   if(nez_match(ctx, 'n')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'o')) {
+   if(nez_match(ctx, 'o')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'p')) {
+   if(nez_match(ctx, 'p')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'q')) {
+   if(nez_match(ctx, 'q')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'r')) {
+   if(nez_match(ctx, 'r')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 's')) {
+   if(nez_match(ctx, 's')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 't')) {
+   if(nez_match(ctx, 't')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'u')) {
+   if(nez_match(ctx, 'u')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'v')) {
+   if(nez_match(ctx, 'v')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'w')) {
+   if(nez_match(ctx, 'w')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'x')) {
+   if(nez_match(ctx, 'x')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'y')) {
+   if(nez_match(ctx, 'y')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, 'z')) {
+   if(nez_match(ctx, 'z')) {
       result = 1;
    }
    if(result == 1) {
@@ -1830,34 +1830,34 @@ int pByteChar271(ParsingContext ctx) {
 
 int pByteMap106(ParsingContext ctx) {
    int result = 0;
-   if(!nez_not_match(ctx, '0')) {
+   if(nez_match(ctx, '0')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, '1')) {
+   if(nez_match(ctx, '1')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, '2')) {
+   if(nez_match(ctx, '2')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, '3')) {
+   if(nez_match(ctx, '3')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, '4')) {
+   if(nez_match(ctx, '4')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, '5')) {
+   if(nez_match(ctx, '5')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, '6')) {
+   if(nez_match(ctx, '6')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, '7')) {
+   if(nez_match(ctx, '7')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, '8')) {
+   if(nez_match(ctx, '8')) {
       result = 1;
    }
-   if(!nez_not_match(ctx, '9')) {
+   if(nez_match(ctx, '9')) {
       result = 1;
    }
    if(result == 1) {
