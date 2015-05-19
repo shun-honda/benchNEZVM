@@ -54,15 +54,7 @@ static inline int nez_match(ParsingContext ctx, char c) {
   }
   return ctx->inputs[ctx->pos] == c;
 }
-
-static inline int nez_not_match(ParsingContext ctx, char c) {
-  if(ctx->pos > ctx->input_size) {
-    fprintf(stderr, "error\n");
-    exit(1);
-    return 0;
-  }
-  return ctx->inputs[ctx->pos] != c;
-}
+int nez_not_match(ParsingContext ctx, char c);
 
 #define PARSING_CONTEXT_MAX_STACK_LENGTH 1024
 ParsingContext nez_CreateParsingContext(const char *filename);

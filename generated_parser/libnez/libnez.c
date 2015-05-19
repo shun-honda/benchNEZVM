@@ -17,6 +17,15 @@ void nez_consume(ParsingContext ctx) {
   }
 }
 
+int nez_not_match(ParsingContext ctx, char c) {
+  if(ctx->pos > ctx->input_size) {
+    fprintf(stderr, "error\n");
+    exit(1);
+    return 0;
+  }
+  return ctx->inputs[ctx->pos] != c;
+}
+
 int nez_unconsume_check(ParsingContext ctx, long pos) {
   if(ctx->pos < ctx->input_size) {
     if(ctx->pos == pos) {
