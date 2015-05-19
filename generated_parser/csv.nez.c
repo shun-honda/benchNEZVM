@@ -5,28 +5,21 @@
 
 int pLine(ParsingContext ctx);
 int pSequence350(ParsingContext ctx);
+int pZeroMore346(ParsingContext ctx);
+int pSequence345(ParsingContext ctx);
+int pNot344(ParsingContext ctx);
+int pByteChar46(ParsingContext ctx);
+int pAnyChar121(ParsingContext ctx);
 int pZeroMore348(ParsingContext ctx);
 int pSequence347(ParsingContext ctx);
-int pByteChar46(ParsingContext ctx);
 int pValue(ParsingContext ctx);
-int pSequence356(ParsingContext ctx);
-int pZeroMore354(ParsingContext ctx);
-int pSequence353(ParsingContext ctx);
-int pNot352(ParsingContext ctx);
-int pChoice351(ParsingContext ctx);
-int pByteChar231(ParsingContext ctx);
-int pAnyChar121(ParsingContext ctx);
+int pSequence352(ParsingContext ctx);
 int pFile(ParsingContext ctx);
-int pSequence363(ParsingContext ctx);
-int pZeroMore360(ParsingContext ctx);
-int pSequence359(ParsingContext ctx);
-int pChoice361(ParsingContext ctx);
-int pNot268(ParsingContext ctx);
 int p_(ParsingContext ctx);
-int pZeroMore367(ParsingContext ctx);
-int pChoice366(ParsingContext ctx);
-int pByteChar364(ParsingContext ctx);
-int pByteChar365(ParsingContext ctx);
+int pZeroMore357(ParsingContext ctx);
+int pChoice356(ParsingContext ctx);
+int pByteChar354(ParsingContext ctx);
+int pByteChar355(ParsingContext ctx);
 
 int pLine(ParsingContext ctx) {
    if(pSequence350(ctx)) {
@@ -40,7 +33,7 @@ int pLine(ParsingContext ctx) {
 int pSequence350(ParsingContext ctx) {
    int result = 1;
    long pos = ctx->pos;
-   if(!pValue(ctx)) {
+   if(!pZeroMore346(ctx)) {
       return 0;
    }
    if(!pZeroMore348(ctx)) {
@@ -49,74 +42,20 @@ int pSequence350(ParsingContext ctx) {
    return result;
 }
 
-int pZeroMore348(ParsingContext ctx) {
+int pZeroMore346(ParsingContext ctx) {
    long pos0 = ctx->pos;
-   if(!pSequence347(ctx)) {
+   if(!pSequence345(ctx)) {
       nez_backtrack(ctx, pos0);
       return 1;
    }
    if(ctx->pos == pos0) { return 1; }
-   return pZeroMore348(ctx);
+   return pZeroMore346(ctx);
 }
 
-int pSequence347(ParsingContext ctx) {
+int pSequence345(ParsingContext ctx) {
    int result = 1;
    long pos = ctx->pos;
-   if(!p_(ctx)) {
-      return 0;
-   }
-   if(!pByteChar46(ctx)) {
-      return 0;
-   }
-   if(!p_(ctx)) {
-      return 0;
-   }
-   if(!pValue(ctx)) {
-      return 0;
-   }
-   return result;
-}
-
-int pByteChar46(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != ',') {
-      return 0;
-   }
-   nez_consume(ctx);
-   return 1;
-}
-
-int pValue(ParsingContext ctx) {
-   if(pSequence356(ctx)) {
-      return 1;
-   }
-   else {
-      return 0;
-   }
-}
-
-int pSequence356(ParsingContext ctx) {
-   int result = 1;
-   long pos = ctx->pos;
-   if(!pZeroMore354(ctx)) {
-      return 0;
-   }
-   return result;
-}
-
-int pZeroMore354(ParsingContext ctx) {
-   long pos0 = ctx->pos;
-   if(!pSequence353(ctx)) {
-      nez_backtrack(ctx, pos0);
-      return 1;
-   }
-   if(ctx->pos == pos0) { return 1; }
-   return pZeroMore354(ctx);
-}
-
-int pSequence353(ParsingContext ctx) {
-   int result = 1;
-   long pos = ctx->pos;
-   if(!pNot352(ctx)) {
+   if(!pNot344(ctx)) {
       return 0;
    }
    if(!pAnyChar121(ctx)) {
@@ -125,9 +64,9 @@ int pSequence353(ParsingContext ctx) {
    return result;
 }
 
-int pNot352(ParsingContext ctx) {
+int pNot344(ParsingContext ctx) {
    long pos0 = ctx->pos;
-   if(pChoice351(ctx)) {
+   if(pByteChar46(ctx)) {
       nez_backtrack(ctx, pos0);
       return 0;
    }
@@ -135,21 +74,8 @@ int pNot352(ParsingContext ctx) {
    return 1;
 }
 
-int pChoice351(ParsingContext ctx) {
-   long pos1 = ctx->pos;
-   if(pByteChar46(ctx)) {
-      return 1;
-   }
-   nez_backtrack(ctx, pos1);
-   if(pByteChar231(ctx)) {
-      return 1;
-   }
-   nez_backtrack(ctx, pos1);
-   return 0;
-}
-
-int pByteChar231(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '\n') {
+int pByteChar46(ParsingContext ctx) {
+   if(ctx->inputs[ctx->pos] != ',') {
       return 0;
    }
    nez_consume(ctx);
@@ -1181,8 +1107,30 @@ int pAnyChar121(ParsingContext ctx) {
    return result;
 }
 
-int pFile(ParsingContext ctx) {
-   if(pSequence363(ctx)) {
+int pZeroMore348(ParsingContext ctx) {
+   long pos0 = ctx->pos;
+   if(!pSequence347(ctx)) {
+      nez_backtrack(ctx, pos0);
+      return 1;
+   }
+   if(ctx->pos == pos0) { return 1; }
+   return pZeroMore348(ctx);
+}
+
+int pSequence347(ParsingContext ctx) {
+   int result = 1;
+   long pos = ctx->pos;
+   if(!pByteChar46(ctx)) {
+      return 0;
+   }
+   if(!pZeroMore346(ctx)) {
+      return 0;
+   }
+   return result;
+}
+
+int pValue(ParsingContext ctx) {
+   if(pSequence352(ctx)) {
       return 1;
    }
    else {
@@ -1190,68 +1138,26 @@ int pFile(ParsingContext ctx) {
    }
 }
 
-int pSequence363(ParsingContext ctx) {
+int pSequence352(ParsingContext ctx) {
    int result = 1;
    long pos = ctx->pos;
-   if(!pLine(ctx)) {
-      return 0;
-   }
-   if(!pZeroMore360(ctx)) {
-      return 0;
-   }
-   if(!pChoice361(ctx)) {
+   if(!pZeroMore346(ctx)) {
       return 0;
    }
    return result;
 }
 
-int pZeroMore360(ParsingContext ctx) {
-   long pos0 = ctx->pos;
-   if(!pSequence359(ctx)) {
-      nez_backtrack(ctx, pos0);
+int pFile(ParsingContext ctx) {
+   if(pLine(ctx)) {
       return 1;
    }
-   if(ctx->pos == pos0) { return 1; }
-   return pZeroMore360(ctx);
-}
-
-int pSequence359(ParsingContext ctx) {
-   int result = 1;
-   long pos = ctx->pos;
-   if(!pByteChar231(ctx)) {
+   else {
       return 0;
    }
-   if(!pLine(ctx)) {
-      return 0;
-   }
-   return result;
-}
-
-int pChoice361(ParsingContext ctx) {
-   long pos1 = ctx->pos;
-   if(pByteChar231(ctx)) {
-      return 1;
-   }
-   nez_backtrack(ctx, pos1);
-   if(pNot268(ctx)) {
-      return 1;
-   }
-   nez_backtrack(ctx, pos1);
-   return 0;
-}
-
-int pNot268(ParsingContext ctx) {
-   long pos1 = ctx->pos;
-   if(pAnyChar121(ctx)) {
-      nez_backtrack(ctx, pos1);
-      return 0;
-   }
-   nez_backtrack(ctx, pos1);
-   return 1;
 }
 
 int p_(ParsingContext ctx) {
-   if(pZeroMore367(ctx)) {
+   if(pZeroMore357(ctx)) {
       return 1;
    }
    else {
@@ -1259,30 +1165,30 @@ int p_(ParsingContext ctx) {
    }
 }
 
-int pZeroMore367(ParsingContext ctx) {
+int pZeroMore357(ParsingContext ctx) {
    long pos0 = ctx->pos;
-   if(!pChoice366(ctx)) {
+   if(!pChoice356(ctx)) {
       nez_backtrack(ctx, pos0);
       return 1;
    }
    if(ctx->pos == pos0) { return 1; }
-   return pZeroMore367(ctx);
+   return pZeroMore357(ctx);
 }
 
-int pChoice366(ParsingContext ctx) {
+int pChoice356(ParsingContext ctx) {
    long pos1 = ctx->pos;
-   if(pByteChar364(ctx)) {
+   if(pByteChar354(ctx)) {
       return 1;
    }
    nez_backtrack(ctx, pos1);
-   if(pByteChar365(ctx)) {
+   if(pByteChar355(ctx)) {
       return 1;
    }
    nez_backtrack(ctx, pos1);
    return 0;
 }
 
-int pByteChar364(ParsingContext ctx) {
+int pByteChar354(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != ' ') {
       return 0;
    }
@@ -1290,7 +1196,7 @@ int pByteChar364(ParsingContext ctx) {
    return 1;
 }
 
-int pByteChar365(ParsingContext ctx) {
+int pByteChar355(ParsingContext ctx) {
    if(ctx->inputs[ctx->pos] != '\t') {
       return 0;
    }
