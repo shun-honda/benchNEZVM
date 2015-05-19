@@ -31,20 +31,6 @@ void nez_backtrack(ParsingContext ctx, long pos) {
   }
 }
 
-int nez_match(ParsingContext ctx, char c) {
-  if(ctx->inputs[ctx->pos] == c) {
-    return 1;
-  }
-  return 0;
-}
-
-int nez_not_match(ParsingContext ctx, char c) {
-  if(ctx->inputs[ctx->pos] != c) {
-    return 1;
-  }
-  return 0;
-}
-
 char *loadFile(const char *filename, size_t *length) {
   size_t len = 0;
   FILE *fp = fopen(filename, "rb");
