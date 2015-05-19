@@ -17,6 +17,19 @@ void nez_consume(ParsingContext ctx) {
   }
 }
 
+int nez_unconsume_check(ParsingContext ctx, long pos) {
+  if(ctx->pos < ctx->input_size) {
+    if(ctx->pos == pos) {
+      return 1;
+    }
+    return 0;
+  }
+  else {
+    nez_PrintErrorInfo("input over flow");
+  }
+  return 0;
+}
+
 void nez_backtrack(ParsingContext ctx, long pos) {
   if(pos != ctx->pos) {
     if(pos < ctx->input_size) {

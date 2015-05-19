@@ -44,6 +44,7 @@ static uint64_t timer() {
 }
 
 void nez_consume(ParsingContext ctx);
+int nez_unconsume_check(ParsingContext ctx, long pos);
 void nez_backtrack(ParsingContext ctx, long pos);
 static inline int nez_match(ParsingContext ctx, char c) {
   if(ctx->pos > ctx->input_size) {
