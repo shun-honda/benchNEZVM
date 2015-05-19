@@ -135,7 +135,7 @@ int pSequence358(ParsingContext ctx) {
 int pZeroMore354(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(!pS(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 1;
    }
    if(ctx->pos == pos0) { return 1; }
@@ -143,10 +143,10 @@ int pZeroMore354(ParsingContext ctx) {
 }
 
 int pByteChar38(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '=') {
+   if(nez_not_match(ctx, '=')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -208,74 +208,74 @@ int pSequence361(ParsingContext ctx) {
 }
 
 int pByteChar75(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '<') {
+   if(nez_not_match(ctx, '<')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteChar82(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '!') {
+   if(nez_not_match(ctx, '!')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteChar2(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '[') {
+   if(nez_not_match(ctx, '[')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteChar345(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != 'C') {
+   if(nez_not_match(ctx, 'C')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteChar346(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != 'D') {
+   if(nez_not_match(ctx, 'D')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteChar347(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != 'A') {
+   if(nez_not_match(ctx, 'A')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteChar348(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != 'T') {
+   if(nez_not_match(ctx, 'T')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteChar1(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != ']') {
+   if(nez_not_match(ctx, ']')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteChar79(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '>') {
+   if(nez_not_match(ctx, '>')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -304,7 +304,7 @@ int pOneMore364(ParsingContext ctx) {
    long pos0 = ctx->pos;
    while(1) {
       if(!pSequence363(ctx)) {
-         ctx->pos = pos0;
+         nez_backtrack(ctx, pos0);
          return 1;
       }
       if(ctx->pos == pos0) { return 1; }
@@ -327,1033 +327,1033 @@ int pSequence363(ParsingContext ctx) {
 int pNot362(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(pByteChar75(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 0;
    }
-   ctx->pos = pos0;
+   nez_backtrack(ctx, pos0);
    return 1;
 }
 
 int pAnyChar121(ParsingContext ctx) {
    int result = 0;
    if(nez_match(ctx, (char)1)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)2)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)3)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)4)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)5)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)6)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)7)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)8)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)9)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)10)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)11)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)12)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)13)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)14)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)15)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)16)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)17)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)18)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)19)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)20)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)21)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)22)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)23)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)24)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)25)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)26)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)27)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)28)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)29)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)30)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)31)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)32)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)33)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)34)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)35)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)36)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)37)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)38)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)39)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)40)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)41)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)42)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)43)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)44)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)45)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)46)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)47)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)48)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)49)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)50)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)51)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)52)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)53)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)54)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)55)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)56)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)57)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)58)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)59)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)60)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)61)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)62)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)63)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)64)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)65)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)66)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)67)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)68)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)69)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)70)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)71)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)72)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)73)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)74)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)75)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)76)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)77)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)78)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)79)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)80)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)81)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)82)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)83)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)84)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)85)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)86)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)87)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)88)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)89)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)90)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)91)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)92)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)93)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)94)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)95)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)96)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)97)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)98)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)99)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)100)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)101)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)102)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)103)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)104)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)105)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)106)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)107)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)108)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)109)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)110)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)111)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)112)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)113)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)114)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)115)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)116)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)117)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)118)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)119)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)120)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)121)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)122)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)123)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)124)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)125)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)126)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)127)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)128)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)129)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)130)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)131)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)132)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)133)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)134)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)135)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)136)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)137)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)138)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)139)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)140)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)141)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)142)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)143)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)144)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)145)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)146)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)147)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)148)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)149)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)150)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)151)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)152)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)153)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)154)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)155)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)156)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)157)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)158)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)159)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)160)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)161)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)162)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)163)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)164)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)165)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)166)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)167)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)168)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)169)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)170)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)171)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)172)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)173)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)174)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)175)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)176)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)177)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)178)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)179)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)180)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)181)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)182)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)183)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)184)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)185)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)186)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)187)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)188)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)189)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)190)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)191)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)192)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)193)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)194)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)195)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)196)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)197)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)198)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)199)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)200)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)201)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)202)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)203)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)204)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)205)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)206)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)207)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)208)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)209)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)210)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)211)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)212)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)213)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)214)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)215)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)216)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)217)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)218)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)219)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)220)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)221)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)222)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)223)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)224)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)225)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)226)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)227)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)228)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)229)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)230)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)231)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)232)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)233)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)234)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)235)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)236)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)237)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)238)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)239)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)240)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)241)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)242)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)243)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)244)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)245)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)246)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)247)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)248)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)249)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)250)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)251)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)252)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)253)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)254)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    if(nez_match(ctx, (char)255)) {
-      ctx->pos++;
+      nez_consume(ctx);
       return 1;
    }
    return result;
@@ -1384,17 +1384,17 @@ int pSequence368(ParsingContext ctx) {
 }
 
 int pByteChar158(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '\"') {
+   if(nez_not_match(ctx, '\"')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pZeroMore366(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(!pSequence161(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 1;
    }
    if(ctx->pos == pos0) { return 1; }
@@ -1416,10 +1416,10 @@ int pSequence161(ParsingContext ctx) {
 int pNot160(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(pByteChar158(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 0;
    }
-   ctx->pos = pos0;
+   nez_backtrack(ctx, pos0);
    return 1;
 }
 
@@ -1475,17 +1475,17 @@ int pSequence374(ParsingContext ctx) {
 }
 
 int pByteChar138(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '-') {
+   if(nez_not_match(ctx, '-')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pZeroMore373(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(!pSequence372(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 1;
    }
    if(ctx->pos == pos0) { return 1; }
@@ -1507,10 +1507,10 @@ int pSequence372(ParsingContext ctx) {
 int pNot371(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(pSequence370(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 0;
    }
-   ctx->pos = pos0;
+   nez_backtrack(ctx, pos0);
    return 1;
 }
 
@@ -1573,260 +1573,214 @@ int pChoice380(ParsingContext ctx) {
    if(pByteMap377(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pByteChar378(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pByteMap379(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pByteChar305(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 0;
 }
 
 int pByteMap377(ParsingContext ctx) {
    int result = 0;
-   if(nez_match(ctx, 'A')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'A')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'B')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'B')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'C')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'C')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'D')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'D')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'E')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'E')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'F')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'F')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'G')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'G')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'H')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'H')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'I')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'I')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'J')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'J')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'K')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'K')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'L')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'L')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'M')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'M')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'N')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'N')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'O')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'O')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'P')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'P')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'Q')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'Q')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'R')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'R')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'S')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'S')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'T')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'T')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'U')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'U')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'V')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'V')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'W')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'W')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'X')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'X')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'Y')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'Y')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'Z')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'Z')) {
+      result = 1;
+   }
+   if(result == 1) {
+      nez_consume(ctx);
    }
    return result;
 }
 
 int pByteChar378(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '_') {
+   if(nez_not_match(ctx, '_')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteMap379(ParsingContext ctx) {
    int result = 0;
-   if(nez_match(ctx, 'a')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'a')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'b')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'b')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'c')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'c')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'd')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'd')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'e')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'e')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'f')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'f')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'g')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'g')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'h')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'h')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'i')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'i')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'j')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'j')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'k')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'k')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'l')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'l')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'm')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'm')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'n')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'n')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'o')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'o')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'p')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'p')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'q')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'q')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'r')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'r')) {
+      result = 1;
    }
-   if(nez_match(ctx, 's')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 's')) {
+      result = 1;
    }
-   if(nez_match(ctx, 't')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 't')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'u')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'u')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'v')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'v')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'w')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'w')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'x')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'x')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'y')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'y')) {
+      result = 1;
    }
-   if(nez_match(ctx, 'z')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, 'z')) {
+      result = 1;
+   }
+   if(result == 1) {
+      nez_consume(ctx);
    }
    return result;
 }
 
 int pByteChar305(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != ':') {
+   if(nez_not_match(ctx, ':')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pZeroMore382(ParsingContext ctx) {
    long pos1 = ctx->pos;
    if(!pChoice381(ctx)) {
-      ctx->pos = pos1;
+      nez_backtrack(ctx, pos1);
       return 1;
    }
    if(ctx->pos == pos1) { return 1; }
@@ -1838,83 +1792,76 @@ int pChoice381(ParsingContext ctx) {
    if(pByteChar138(ctx)) {
       return 1;
    }
-   ctx->pos = pos2;
+   nez_backtrack(ctx, pos2);
    if(pByteChar271(ctx)) {
       return 1;
    }
-   ctx->pos = pos2;
+   nez_backtrack(ctx, pos2);
    if(pByteMap106(ctx)) {
       return 1;
    }
-   ctx->pos = pos2;
+   nez_backtrack(ctx, pos2);
    if(pByteChar305(ctx)) {
       return 1;
    }
-   ctx->pos = pos2;
+   nez_backtrack(ctx, pos2);
    if(pByteMap377(ctx)) {
       return 1;
    }
-   ctx->pos = pos2;
+   nez_backtrack(ctx, pos2);
    if(pByteChar378(ctx)) {
       return 1;
    }
-   ctx->pos = pos2;
+   nez_backtrack(ctx, pos2);
    if(pByteMap379(ctx)) {
       return 1;
    }
-   ctx->pos = pos2;
+   nez_backtrack(ctx, pos2);
    return 0;
 }
 
 int pByteChar271(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '.') {
+   if(nez_not_match(ctx, '.')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteMap106(ParsingContext ctx) {
    int result = 0;
-   if(nez_match(ctx, '0')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, '0')) {
+      result = 1;
    }
-   if(nez_match(ctx, '1')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, '1')) {
+      result = 1;
    }
-   if(nez_match(ctx, '2')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, '2')) {
+      result = 1;
    }
-   if(nez_match(ctx, '3')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, '3')) {
+      result = 1;
    }
-   if(nez_match(ctx, '4')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, '4')) {
+      result = 1;
    }
-   if(nez_match(ctx, '5')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, '5')) {
+      result = 1;
    }
-   if(nez_match(ctx, '6')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, '6')) {
+      result = 1;
    }
-   if(nez_match(ctx, '7')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, '7')) {
+      result = 1;
    }
-   if(nez_match(ctx, '8')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, '8')) {
+      result = 1;
    }
-   if(nez_match(ctx, '9')) {
-      ctx->pos++;
-      return 1;
+   if(!nez_not_match(ctx, '9')) {
+      result = 1;
+   }
+   if(result == 1) {
+      nez_consume(ctx);
    }
    return result;
 }
@@ -1933,51 +1880,51 @@ int pChoice386(ParsingContext ctx) {
    if(pByteChar384(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pByteChar385(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pByteChar230(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pByteChar231(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 0;
 }
 
 int pByteChar384(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != ' ') {
+   if(nez_not_match(ctx, ' ')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteChar385(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '\t') {
+   if(nez_not_match(ctx, '\t')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteChar230(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '\r') {
+   if(nez_not_match(ctx, '\r')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteChar231(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '\n') {
+   if(nez_not_match(ctx, '\n')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -2020,7 +1967,7 @@ int pSequence390(ParsingContext ctx) {
 int pZeroMore389(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(!pSequence388(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 1;
    }
    if(ctx->pos == pos0) { return 1; }
@@ -2042,10 +1989,10 @@ int pSequence388(ParsingContext ctx) {
 int pNot387(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(pByteChar79(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 0;
    }
-   ctx->pos = pos0;
+   nez_backtrack(ctx, pos0);
    return 1;
 }
 
@@ -2085,7 +2032,7 @@ int pSequence405(ParsingContext ctx) {
 int pZeroMore395(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(!pSequence394(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 1;
    }
    if(ctx->pos == pos0) { return 1; }
@@ -2111,7 +2058,7 @@ int pOneMore391(ParsingContext ctx) {
    long pos0 = ctx->pos;
    while(1) {
       if(!pS(ctx)) {
-         ctx->pos = pos0;
+         nez_backtrack(ctx, pos0);
          return 1;
       }
       if(ctx->pos == pos0) { return 1; }
@@ -2124,11 +2071,11 @@ int pChoice403(ParsingContext ctx) {
    if(pSequence396(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pSequence402(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 0;
 }
 
@@ -2145,10 +2092,10 @@ int pSequence396(ParsingContext ctx) {
 }
 
 int pByteChar174(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '/') {
+   if(nez_not_match(ctx, '/')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
@@ -2182,7 +2129,7 @@ int pSequence402(ParsingContext ctx) {
 int pZeroMore401(ParsingContext ctx) {
    long pos1 = ctx->pos;
    if(!pChoice400(ctx)) {
-      ctx->pos = pos1;
+      nez_backtrack(ctx, pos1);
       return 1;
    }
    if(ctx->pos == pos1) { return 1; }
@@ -2194,11 +2141,11 @@ int pChoice400(ParsingContext ctx) {
    if(pContent(ctx)) {
       return 1;
    }
-   ctx->pos = pos2;
+   nez_backtrack(ctx, pos2);
    if(pCOMMENT(ctx)) {
       return 1;
    }
-   ctx->pos = pos2;
+   nez_backtrack(ctx, pos2);
    return 0;
 }
 
@@ -2216,15 +2163,15 @@ int pChoice408(ParsingContext ctx) {
    if(pXml(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pCDataSec(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pText(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 0;
 }
 
@@ -2268,41 +2215,41 @@ int pSequence413(ParsingContext ctx) {
 }
 
 int pByteChar68(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != '?') {
+   if(nez_not_match(ctx, '?')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteChar22(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != 'x') {
+   if(nez_not_match(ctx, 'x')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteChar14(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != 'm') {
+   if(nez_not_match(ctx, 'm')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pByteChar7(ParsingContext ctx) {
-   if(ctx->inputs[ctx->pos] != 'l') {
+   if(nez_not_match(ctx, 'l')) {
       return 0;
    }
-   ctx->pos++;
+   nez_consume(ctx);
    return 1;
 }
 
 int pZeroMore412(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(!pSequence411(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 1;
    }
    if(ctx->pos == pos0) { return 1; }
@@ -2324,10 +2271,10 @@ int pSequence411(ParsingContext ctx) {
 int pNot410(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(pSequence409(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 0;
    }
-   ctx->pos = pos0;
+   nez_backtrack(ctx, pos0);
    return 1;
 }
 
@@ -2390,7 +2337,7 @@ int pOption415(ParsingContext ctx) {
    if(pPROLOG(ctx)) {
       return 1;
    }
-   ctx->pos = pos0;
+   nez_backtrack(ctx, pos0);
    return 1;
 }
 int pOption417(ParsingContext ctx) {
@@ -2398,7 +2345,7 @@ int pOption417(ParsingContext ctx) {
    if(pDTD(ctx)) {
       return 1;
    }
-   ctx->pos = pos0;
+   nez_backtrack(ctx, pos0);
    return 1;
 }
 int pCDATA(ParsingContext ctx) {
@@ -2425,7 +2372,7 @@ int pSequence424(ParsingContext ctx) {
 int pZeroMore421(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(!pSequence420(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 1;
    }
    if(ctx->pos == pos0) { return 1; }
@@ -2447,10 +2394,10 @@ int pSequence420(ParsingContext ctx) {
 int pNot419(ParsingContext ctx) {
    long pos0 = ctx->pos;
    if(pChoice350(ctx)) {
-      ctx->pos = pos0;
+      nez_backtrack(ctx, pos0);
       return 0;
    }
-   ctx->pos = pos0;
+   nez_backtrack(ctx, pos0);
    return 1;
 }
 
@@ -2459,11 +2406,11 @@ int pChoice350(ParsingContext ctx) {
    if(pSequence344(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    if(pSequence349(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 0;
 }
 
@@ -2520,7 +2467,7 @@ int pOption423(ParsingContext ctx) {
    if(pSequence422(ctx)) {
       return 1;
    }
-   ctx->pos = pos1;
+   nez_backtrack(ctx, pos1);
    return 1;
 }
 int pSequence422(ParsingContext ctx) {
