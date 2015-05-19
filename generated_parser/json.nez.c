@@ -137,27 +137,27 @@ int pSequence345(ParsingContext ctx) {
 }
 
 int pByteChar11(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'n')) {
-      return 0;
+   if(!nez_not_match(ctx, 'n')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar5(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'u')) {
-      return 0;
+   if(!nez_not_match(ctx, 'u')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar7(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'l')) {
-      return 0;
+   if(!nez_not_match(ctx, 'l')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pObjectId(ParsingContext ctx) {
@@ -215,83 +215,83 @@ int pSequence353(ParsingContext ctx) {
 }
 
 int pByteChar346(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'O')) {
-      return 0;
+   if(!nez_not_match(ctx, 'O')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar6(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'b')) {
-      return 0;
+   if(!nez_not_match(ctx, 'b')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar347(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'j')) {
-      return 0;
+   if(!nez_not_match(ctx, 'j')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar12(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'e')) {
-      return 0;
+   if(!nez_not_match(ctx, 'e')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar9(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'c')) {
-      return 0;
+   if(!nez_not_match(ctx, 'c')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar17(ParsingContext ctx) {
-   if(nez_not_match(ctx, 't')) {
-      return 0;
+   if(!nez_not_match(ctx, 't')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar348(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'I')) {
-      return 0;
+   if(!nez_not_match(ctx, 'I')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar97(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'd')) {
-      return 0;
+   if(!nez_not_match(ctx, 'd')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar284(ParsingContext ctx) {
-   if(nez_not_match(ctx, '(')) {
-      return 0;
+   if(!nez_not_match(ctx, '(')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar158(ParsingContext ctx) {
-   if(nez_not_match(ctx, '\"')) {
-      return 0;
+   if(!nez_not_match(ctx, '\"')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pOneMore351(ParsingContext ctx) {
@@ -447,11 +447,11 @@ int pByteMap349(ParsingContext ctx) {
 }
 
 int pByteChar285(ParsingContext ctx) {
-   if(nez_not_match(ctx, ')')) {
-      return 0;
+   if(!nez_not_match(ctx, ')')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pTrue(ParsingContext ctx) {
@@ -482,11 +482,11 @@ int pSequence355(ParsingContext ctx) {
 }
 
 int pByteChar16(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'r')) {
-      return 0;
+   if(!nez_not_match(ctx, 'r')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pString(ParsingContext ctx) {
@@ -553,11 +553,11 @@ int pSequence159(ParsingContext ctx) {
 }
 
 int pByteChar117(ParsingContext ctx) {
-   if(nez_not_match(ctx, '\\')) {
-      return 0;
+   if(!nez_not_match(ctx, '\\')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pSequence119(ParsingContext ctx) {
@@ -596,1023 +596,1023 @@ int pNot160(ParsingContext ctx) {
 
 int pAnyChar121(ParsingContext ctx) {
    int result = 0;
-   if(!nez_not_match(ctx, (char)1)) {
+   if(nez_match(ctx, (char)1)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)2)) {
+   if(nez_match(ctx, (char)2)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)3)) {
+   if(nez_match(ctx, (char)3)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)4)) {
+   if(nez_match(ctx, (char)4)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)5)) {
+   if(nez_match(ctx, (char)5)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)6)) {
+   if(nez_match(ctx, (char)6)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)7)) {
+   if(nez_match(ctx, (char)7)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)8)) {
+   if(nez_match(ctx, (char)8)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)9)) {
+   if(nez_match(ctx, (char)9)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)10)) {
+   if(nez_match(ctx, (char)10)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)11)) {
+   if(nez_match(ctx, (char)11)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)12)) {
+   if(nez_match(ctx, (char)12)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)13)) {
+   if(nez_match(ctx, (char)13)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)14)) {
+   if(nez_match(ctx, (char)14)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)15)) {
+   if(nez_match(ctx, (char)15)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)16)) {
+   if(nez_match(ctx, (char)16)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)17)) {
+   if(nez_match(ctx, (char)17)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)18)) {
+   if(nez_match(ctx, (char)18)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)19)) {
+   if(nez_match(ctx, (char)19)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)20)) {
+   if(nez_match(ctx, (char)20)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)21)) {
+   if(nez_match(ctx, (char)21)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)22)) {
+   if(nez_match(ctx, (char)22)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)23)) {
+   if(nez_match(ctx, (char)23)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)24)) {
+   if(nez_match(ctx, (char)24)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)25)) {
+   if(nez_match(ctx, (char)25)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)26)) {
+   if(nez_match(ctx, (char)26)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)27)) {
+   if(nez_match(ctx, (char)27)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)28)) {
+   if(nez_match(ctx, (char)28)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)29)) {
+   if(nez_match(ctx, (char)29)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)30)) {
+   if(nez_match(ctx, (char)30)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)31)) {
+   if(nez_match(ctx, (char)31)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)32)) {
+   if(nez_match(ctx, (char)32)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)33)) {
+   if(nez_match(ctx, (char)33)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)34)) {
+   if(nez_match(ctx, (char)34)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)35)) {
+   if(nez_match(ctx, (char)35)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)36)) {
+   if(nez_match(ctx, (char)36)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)37)) {
+   if(nez_match(ctx, (char)37)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)38)) {
+   if(nez_match(ctx, (char)38)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)39)) {
+   if(nez_match(ctx, (char)39)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)40)) {
+   if(nez_match(ctx, (char)40)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)41)) {
+   if(nez_match(ctx, (char)41)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)42)) {
+   if(nez_match(ctx, (char)42)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)43)) {
+   if(nez_match(ctx, (char)43)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)44)) {
+   if(nez_match(ctx, (char)44)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)45)) {
+   if(nez_match(ctx, (char)45)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)46)) {
+   if(nez_match(ctx, (char)46)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)47)) {
+   if(nez_match(ctx, (char)47)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)48)) {
+   if(nez_match(ctx, (char)48)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)49)) {
+   if(nez_match(ctx, (char)49)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)50)) {
+   if(nez_match(ctx, (char)50)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)51)) {
+   if(nez_match(ctx, (char)51)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)52)) {
+   if(nez_match(ctx, (char)52)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)53)) {
+   if(nez_match(ctx, (char)53)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)54)) {
+   if(nez_match(ctx, (char)54)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)55)) {
+   if(nez_match(ctx, (char)55)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)56)) {
+   if(nez_match(ctx, (char)56)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)57)) {
+   if(nez_match(ctx, (char)57)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)58)) {
+   if(nez_match(ctx, (char)58)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)59)) {
+   if(nez_match(ctx, (char)59)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)60)) {
+   if(nez_match(ctx, (char)60)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)61)) {
+   if(nez_match(ctx, (char)61)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)62)) {
+   if(nez_match(ctx, (char)62)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)63)) {
+   if(nez_match(ctx, (char)63)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)64)) {
+   if(nez_match(ctx, (char)64)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)65)) {
+   if(nez_match(ctx, (char)65)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)66)) {
+   if(nez_match(ctx, (char)66)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)67)) {
+   if(nez_match(ctx, (char)67)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)68)) {
+   if(nez_match(ctx, (char)68)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)69)) {
+   if(nez_match(ctx, (char)69)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)70)) {
+   if(nez_match(ctx, (char)70)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)71)) {
+   if(nez_match(ctx, (char)71)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)72)) {
+   if(nez_match(ctx, (char)72)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)73)) {
+   if(nez_match(ctx, (char)73)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)74)) {
+   if(nez_match(ctx, (char)74)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)75)) {
+   if(nez_match(ctx, (char)75)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)76)) {
+   if(nez_match(ctx, (char)76)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)77)) {
+   if(nez_match(ctx, (char)77)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)78)) {
+   if(nez_match(ctx, (char)78)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)79)) {
+   if(nez_match(ctx, (char)79)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)80)) {
+   if(nez_match(ctx, (char)80)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)81)) {
+   if(nez_match(ctx, (char)81)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)82)) {
+   if(nez_match(ctx, (char)82)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)83)) {
+   if(nez_match(ctx, (char)83)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)84)) {
+   if(nez_match(ctx, (char)84)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)85)) {
+   if(nez_match(ctx, (char)85)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)86)) {
+   if(nez_match(ctx, (char)86)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)87)) {
+   if(nez_match(ctx, (char)87)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)88)) {
+   if(nez_match(ctx, (char)88)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)89)) {
+   if(nez_match(ctx, (char)89)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)90)) {
+   if(nez_match(ctx, (char)90)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)91)) {
+   if(nez_match(ctx, (char)91)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)92)) {
+   if(nez_match(ctx, (char)92)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)93)) {
+   if(nez_match(ctx, (char)93)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)94)) {
+   if(nez_match(ctx, (char)94)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)95)) {
+   if(nez_match(ctx, (char)95)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)96)) {
+   if(nez_match(ctx, (char)96)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)97)) {
+   if(nez_match(ctx, (char)97)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)98)) {
+   if(nez_match(ctx, (char)98)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)99)) {
+   if(nez_match(ctx, (char)99)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)100)) {
+   if(nez_match(ctx, (char)100)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)101)) {
+   if(nez_match(ctx, (char)101)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)102)) {
+   if(nez_match(ctx, (char)102)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)103)) {
+   if(nez_match(ctx, (char)103)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)104)) {
+   if(nez_match(ctx, (char)104)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)105)) {
+   if(nez_match(ctx, (char)105)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)106)) {
+   if(nez_match(ctx, (char)106)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)107)) {
+   if(nez_match(ctx, (char)107)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)108)) {
+   if(nez_match(ctx, (char)108)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)109)) {
+   if(nez_match(ctx, (char)109)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)110)) {
+   if(nez_match(ctx, (char)110)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)111)) {
+   if(nez_match(ctx, (char)111)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)112)) {
+   if(nez_match(ctx, (char)112)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)113)) {
+   if(nez_match(ctx, (char)113)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)114)) {
+   if(nez_match(ctx, (char)114)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)115)) {
+   if(nez_match(ctx, (char)115)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)116)) {
+   if(nez_match(ctx, (char)116)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)117)) {
+   if(nez_match(ctx, (char)117)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)118)) {
+   if(nez_match(ctx, (char)118)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)119)) {
+   if(nez_match(ctx, (char)119)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)120)) {
+   if(nez_match(ctx, (char)120)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)121)) {
+   if(nez_match(ctx, (char)121)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)122)) {
+   if(nez_match(ctx, (char)122)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)123)) {
+   if(nez_match(ctx, (char)123)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)124)) {
+   if(nez_match(ctx, (char)124)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)125)) {
+   if(nez_match(ctx, (char)125)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)126)) {
+   if(nez_match(ctx, (char)126)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)127)) {
+   if(nez_match(ctx, (char)127)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)128)) {
+   if(nez_match(ctx, (char)128)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)129)) {
+   if(nez_match(ctx, (char)129)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)130)) {
+   if(nez_match(ctx, (char)130)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)131)) {
+   if(nez_match(ctx, (char)131)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)132)) {
+   if(nez_match(ctx, (char)132)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)133)) {
+   if(nez_match(ctx, (char)133)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)134)) {
+   if(nez_match(ctx, (char)134)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)135)) {
+   if(nez_match(ctx, (char)135)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)136)) {
+   if(nez_match(ctx, (char)136)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)137)) {
+   if(nez_match(ctx, (char)137)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)138)) {
+   if(nez_match(ctx, (char)138)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)139)) {
+   if(nez_match(ctx, (char)139)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)140)) {
+   if(nez_match(ctx, (char)140)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)141)) {
+   if(nez_match(ctx, (char)141)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)142)) {
+   if(nez_match(ctx, (char)142)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)143)) {
+   if(nez_match(ctx, (char)143)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)144)) {
+   if(nez_match(ctx, (char)144)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)145)) {
+   if(nez_match(ctx, (char)145)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)146)) {
+   if(nez_match(ctx, (char)146)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)147)) {
+   if(nez_match(ctx, (char)147)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)148)) {
+   if(nez_match(ctx, (char)148)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)149)) {
+   if(nez_match(ctx, (char)149)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)150)) {
+   if(nez_match(ctx, (char)150)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)151)) {
+   if(nez_match(ctx, (char)151)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)152)) {
+   if(nez_match(ctx, (char)152)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)153)) {
+   if(nez_match(ctx, (char)153)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)154)) {
+   if(nez_match(ctx, (char)154)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)155)) {
+   if(nez_match(ctx, (char)155)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)156)) {
+   if(nez_match(ctx, (char)156)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)157)) {
+   if(nez_match(ctx, (char)157)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)158)) {
+   if(nez_match(ctx, (char)158)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)159)) {
+   if(nez_match(ctx, (char)159)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)160)) {
+   if(nez_match(ctx, (char)160)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)161)) {
+   if(nez_match(ctx, (char)161)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)162)) {
+   if(nez_match(ctx, (char)162)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)163)) {
+   if(nez_match(ctx, (char)163)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)164)) {
+   if(nez_match(ctx, (char)164)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)165)) {
+   if(nez_match(ctx, (char)165)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)166)) {
+   if(nez_match(ctx, (char)166)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)167)) {
+   if(nez_match(ctx, (char)167)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)168)) {
+   if(nez_match(ctx, (char)168)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)169)) {
+   if(nez_match(ctx, (char)169)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)170)) {
+   if(nez_match(ctx, (char)170)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)171)) {
+   if(nez_match(ctx, (char)171)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)172)) {
+   if(nez_match(ctx, (char)172)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)173)) {
+   if(nez_match(ctx, (char)173)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)174)) {
+   if(nez_match(ctx, (char)174)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)175)) {
+   if(nez_match(ctx, (char)175)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)176)) {
+   if(nez_match(ctx, (char)176)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)177)) {
+   if(nez_match(ctx, (char)177)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)178)) {
+   if(nez_match(ctx, (char)178)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)179)) {
+   if(nez_match(ctx, (char)179)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)180)) {
+   if(nez_match(ctx, (char)180)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)181)) {
+   if(nez_match(ctx, (char)181)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)182)) {
+   if(nez_match(ctx, (char)182)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)183)) {
+   if(nez_match(ctx, (char)183)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)184)) {
+   if(nez_match(ctx, (char)184)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)185)) {
+   if(nez_match(ctx, (char)185)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)186)) {
+   if(nez_match(ctx, (char)186)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)187)) {
+   if(nez_match(ctx, (char)187)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)188)) {
+   if(nez_match(ctx, (char)188)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)189)) {
+   if(nez_match(ctx, (char)189)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)190)) {
+   if(nez_match(ctx, (char)190)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)191)) {
+   if(nez_match(ctx, (char)191)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)192)) {
+   if(nez_match(ctx, (char)192)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)193)) {
+   if(nez_match(ctx, (char)193)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)194)) {
+   if(nez_match(ctx, (char)194)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)195)) {
+   if(nez_match(ctx, (char)195)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)196)) {
+   if(nez_match(ctx, (char)196)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)197)) {
+   if(nez_match(ctx, (char)197)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)198)) {
+   if(nez_match(ctx, (char)198)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)199)) {
+   if(nez_match(ctx, (char)199)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)200)) {
+   if(nez_match(ctx, (char)200)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)201)) {
+   if(nez_match(ctx, (char)201)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)202)) {
+   if(nez_match(ctx, (char)202)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)203)) {
+   if(nez_match(ctx, (char)203)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)204)) {
+   if(nez_match(ctx, (char)204)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)205)) {
+   if(nez_match(ctx, (char)205)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)206)) {
+   if(nez_match(ctx, (char)206)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)207)) {
+   if(nez_match(ctx, (char)207)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)208)) {
+   if(nez_match(ctx, (char)208)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)209)) {
+   if(nez_match(ctx, (char)209)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)210)) {
+   if(nez_match(ctx, (char)210)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)211)) {
+   if(nez_match(ctx, (char)211)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)212)) {
+   if(nez_match(ctx, (char)212)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)213)) {
+   if(nez_match(ctx, (char)213)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)214)) {
+   if(nez_match(ctx, (char)214)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)215)) {
+   if(nez_match(ctx, (char)215)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)216)) {
+   if(nez_match(ctx, (char)216)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)217)) {
+   if(nez_match(ctx, (char)217)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)218)) {
+   if(nez_match(ctx, (char)218)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)219)) {
+   if(nez_match(ctx, (char)219)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)220)) {
+   if(nez_match(ctx, (char)220)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)221)) {
+   if(nez_match(ctx, (char)221)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)222)) {
+   if(nez_match(ctx, (char)222)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)223)) {
+   if(nez_match(ctx, (char)223)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)224)) {
+   if(nez_match(ctx, (char)224)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)225)) {
+   if(nez_match(ctx, (char)225)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)226)) {
+   if(nez_match(ctx, (char)226)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)227)) {
+   if(nez_match(ctx, (char)227)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)228)) {
+   if(nez_match(ctx, (char)228)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)229)) {
+   if(nez_match(ctx, (char)229)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)230)) {
+   if(nez_match(ctx, (char)230)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)231)) {
+   if(nez_match(ctx, (char)231)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)232)) {
+   if(nez_match(ctx, (char)232)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)233)) {
+   if(nez_match(ctx, (char)233)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)234)) {
+   if(nez_match(ctx, (char)234)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)235)) {
+   if(nez_match(ctx, (char)235)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)236)) {
+   if(nez_match(ctx, (char)236)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)237)) {
+   if(nez_match(ctx, (char)237)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)238)) {
+   if(nez_match(ctx, (char)238)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)239)) {
+   if(nez_match(ctx, (char)239)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)240)) {
+   if(nez_match(ctx, (char)240)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)241)) {
+   if(nez_match(ctx, (char)241)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)242)) {
+   if(nez_match(ctx, (char)242)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)243)) {
+   if(nez_match(ctx, (char)243)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)244)) {
+   if(nez_match(ctx, (char)244)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)245)) {
+   if(nez_match(ctx, (char)245)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)246)) {
+   if(nez_match(ctx, (char)246)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)247)) {
+   if(nez_match(ctx, (char)247)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)248)) {
+   if(nez_match(ctx, (char)248)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)249)) {
+   if(nez_match(ctx, (char)249)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)250)) {
+   if(nez_match(ctx, (char)250)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)251)) {
+   if(nez_match(ctx, (char)251)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)252)) {
+   if(nez_match(ctx, (char)252)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)253)) {
+   if(nez_match(ctx, (char)253)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)254)) {
+   if(nez_match(ctx, (char)254)) {
       nez_consume(ctx);
       return 1;
    }
-   if(!nez_not_match(ctx, (char)255)) {
+   if(nez_match(ctx, (char)255)) {
       nez_consume(ctx);
       return 1;
    }
@@ -1650,27 +1650,27 @@ int pSequence357(ParsingContext ctx) {
 }
 
 int pByteChar49(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'f')) {
-      return 0;
+   if(!nez_not_match(ctx, 'f')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar21(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'a')) {
-      return 0;
+   if(!nez_not_match(ctx, 'a')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar19(ParsingContext ctx) {
-   if(nez_not_match(ctx, 's')) {
-      return 0;
+   if(!nez_not_match(ctx, 's')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pChunk(ParsingContext ctx) {
@@ -1736,11 +1736,11 @@ int pChoice366(ParsingContext ctx) {
 }
 
 int pByteChar279(ParsingContext ctx) {
-   if(nez_not_match(ctx, '0')) {
-      return 0;
+   if(!nez_not_match(ctx, '0')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pSequence365(ParsingContext ctx) {
@@ -1822,11 +1822,11 @@ int pSequence368(ParsingContext ctx) {
 }
 
 int pByteChar271(ParsingContext ctx) {
-   if(nez_not_match(ctx, '.')) {
-      return 0;
+   if(!nez_not_match(ctx, '.')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pOneMore367(ParsingContext ctx) {
@@ -1872,11 +1872,11 @@ int pSequence375(ParsingContext ctx) {
 }
 
 int pByteChar2(ParsingContext ctx) {
-   if(nez_not_match(ctx, '[')) {
-      return 0;
+   if(!nez_not_match(ctx, '[')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pOption374(ParsingContext ctx) {
@@ -1925,11 +1925,11 @@ int pSequence371(ParsingContext ctx) {
 }
 
 int pByteChar1(ParsingContext ctx) {
-   if(nez_not_match(ctx, ']')) {
-      return 0;
+   if(!nez_not_match(ctx, ']')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pS(ParsingContext ctx) {
@@ -1963,35 +1963,35 @@ int pChoice378(ParsingContext ctx) {
 }
 
 int pByteChar376(ParsingContext ctx) {
-   if(nez_not_match(ctx, ' ')) {
-      return 0;
+   if(!nez_not_match(ctx, ' ')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar377(ParsingContext ctx) {
-   if(nez_not_match(ctx, '\t')) {
-      return 0;
+   if(!nez_not_match(ctx, '\t')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar231(ParsingContext ctx) {
-   if(nez_not_match(ctx, '\n')) {
-      return 0;
+   if(!nez_not_match(ctx, '\n')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pByteChar230(ParsingContext ctx) {
-   if(nez_not_match(ctx, '\r')) {
-      return 0;
+   if(!nez_not_match(ctx, '\r')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pJSONObject(ParsingContext ctx) {
@@ -2022,11 +2022,11 @@ int pSequence386(ParsingContext ctx) {
 }
 
 int pByteChar244(ParsingContext ctx) {
-   if(nez_not_match(ctx, '{')) {
-      return 0;
+   if(!nez_not_match(ctx, '{')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pOption384(ParsingContext ctx) {
@@ -2075,11 +2075,11 @@ int pSequence381(ParsingContext ctx) {
 }
 
 int pByteChar251(ParsingContext ctx) {
-   if(nez_not_match(ctx, '}')) {
-      return 0;
+   if(!nez_not_match(ctx, '}')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pNumber(ParsingContext ctx) {
@@ -2115,11 +2115,11 @@ int pOption387(ParsingContext ctx) {
    return 1;
 }
 int pByteChar138(ParsingContext ctx) {
-   if(nez_not_match(ctx, '-')) {
-      return 0;
+   if(!nez_not_match(ctx, '-')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pChoice394(ParsingContext ctx) {
@@ -2179,11 +2179,11 @@ int pSequence396(ParsingContext ctx) {
 }
 
 int pByteChar46(ParsingContext ctx) {
-   if(nez_not_match(ctx, ',')) {
-      return 0;
+   if(!nez_not_match(ctx, ',')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pValue(ParsingContext ctx) {
@@ -2279,11 +2279,11 @@ int pChoice407(ParsingContext ctx) {
 }
 
 int pByteChar406(ParsingContext ctx) {
-   if(nez_not_match(ctx, 'E')) {
-      return 0;
+   if(!nez_not_match(ctx, 'E')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pOption409(ParsingContext ctx) {
@@ -2308,11 +2308,11 @@ int pChoice408(ParsingContext ctx) {
 }
 
 int pByteChar65(ParsingContext ctx) {
-   if(nez_not_match(ctx, '+')) {
-      return 0;
+   if(!nez_not_match(ctx, '+')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int pexport(ParsingContext ctx) {
@@ -2410,11 +2410,11 @@ int pSequence417(ParsingContext ctx) {
 }
 
 int pByteChar305(ParsingContext ctx) {
-   if(nez_not_match(ctx, ':')) {
-      return 0;
+   if(!nez_not_match(ctx, ':')) {
+      nez_consume(ctx);
+      return 1;
    }
-   nez_consume(ctx);
-   return 1;
+   return 0;
 }
 
 int main(int argc, char* const argv[]) {
