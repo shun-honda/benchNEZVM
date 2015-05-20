@@ -517,7 +517,11 @@ YY_RULE(int) yy_MONTH(yycontext *yy)
 }
 YY_RULE(int) yy_LOG_(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
-  yyprintf((stderr, "%s\n", "LOG_"));  if (!yy_MONTH(yy)) goto l62;  if (!yymatchChar(yy, ' ')) goto l62;  if (!yy_DAY(yy)) goto l62;  if (!yymatchChar(yy, ' ')) goto l62;  if (!yy_TIME(yy)) goto l62;  if (!yymatchChar(yy, ' ')) goto l62;  if (!yy_HOST(yy)) goto l62;  if (!yymatchChar(yy, ' ')) goto l62;  if (!yy_PROCESS(yy)) goto l62;  if (!yymatchChar(yy, '[')) goto l62;  if (!yy_PID(yy)) goto l62;  if (!yymatchChar(yy, ']')) goto l62;  if (!yy_Misc(yy)) goto l62;  if (!yy_Level(yy)) goto l62;  if (!yymatchString(yy, ": ")) goto l62;  if (!yy_DATA(yy)) goto l62;  if (!yymatchChar(yy, '\n')) goto l62;
+  yyprintf((stderr, "%s\n", "LOG_"));  if (!yy_MONTH(yy)) goto l62;  if (!yymatchChar(yy, ' ')) goto l62;  if (!yy_DAY(yy)) goto l62;  if (!yymatchChar(yy, ' ')) goto l62;  if (!yy_TIME(yy)) goto l62;  if (!yymatchChar(yy, ' ')) goto l62;  if (!yy_HOST(yy)) goto l62;  if (!yymatchChar(yy, ' ')) goto l62;  if (!yy_PROCESS(yy)) goto l62;  if (!yymatchChar(yy, '[')) goto l62;  if (!yy_PID(yy)) goto l62;  if (!yymatchChar(yy, ']')) goto l62;  if (!yy_Misc(yy)) goto l62;  if (!yy_Level(yy)) goto l62;  if (!yymatchString(yy, ": ")) goto l62;  if (!yy_DATA(yy)) goto l62;
+  {  int yypos63= yy->__pos, yythunkpos63= yy->__thunkpos;  if (!yymatchChar(yy, '\n')) goto l63;  goto l64;
+  l63:;	  yy->__pos= yypos63; yy->__thunkpos= yythunkpos63;
+  }
+  l64:;	
   yyprintf((stderr, "  ok   %s @ %s\n", "LOG_", yy->__buf+yy->__pos));
   return 1;
   l62:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
@@ -526,37 +530,37 @@ YY_RULE(int) yy_LOG_(yycontext *yy)
 }
 YY_RULE(int) yy_LOG(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
-  yyprintf((stderr, "%s\n", "LOG"));  if (!yy_MONTH(yy)) goto l63;  if (!yymatchChar(yy, ' ')) goto l63;  if (!yy_DAY(yy)) goto l63;  if (!yymatchChar(yy, ' ')) goto l63;  if (!yy_TIME(yy)) goto l63;  if (!yymatchChar(yy, ' ')) goto l63;  if (!yy_HOST(yy)) goto l63;  if (!yymatchChar(yy, ' ')) goto l63;  if (!yy_PROCESS(yy)) goto l63;  if (!yymatchChar(yy, '[')) goto l63;  if (!yy_PID(yy)) goto l63;  if (!yymatchChar(yy, ']')) goto l63;  if (!yy_Misc(yy)) goto l63;  if (!yy_Level(yy)) goto l63;  if (!yymatchString(yy, ": ")) goto l63;  if (!yy_DATA(yy)) goto l63;
+  yyprintf((stderr, "%s\n", "LOG"));  if (!yy_MONTH(yy)) goto l65;  if (!yymatchChar(yy, ' ')) goto l65;  if (!yy_DAY(yy)) goto l65;  if (!yy_TIME(yy)) goto l65;  if (!yymatchChar(yy, ' ')) goto l65;  if (!yy_HOST(yy)) goto l65;  if (!yymatchChar(yy, ' ')) goto l65;  if (!yy_PROCESS(yy)) goto l65;  if (!yymatchChar(yy, '[')) goto l65;  if (!yy_PID(yy)) goto l65;  if (!yymatchChar(yy, ']')) goto l65;  if (!yy_Misc(yy)) goto l65;  if (!yy_Level(yy)) goto l65;  if (!yymatchString(yy, ": ")) goto l65;  if (!yy_DATA(yy)) goto l65;
   yyprintf((stderr, "  ok   %s @ %s\n", "LOG", yy->__buf+yy->__pos));
   return 1;
-  l63:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
+  l65:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
   yyprintf((stderr, "  fail %s @ %s\n", "LOG", yy->__buf+yy->__pos));
   return 0;
 }
 YY_RULE(int) yy_Log(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
   yyprintf((stderr, "%s\n", "Log"));
-  {  int yypos65= yy->__pos, yythunkpos65= yy->__thunkpos;  if (!yy_LOG(yy)) goto l66;  goto l65;
-  l66:;	  yy->__pos= yypos65; yy->__thunkpos= yythunkpos65;  if (!yy_LOG_(yy)) goto l67;  goto l65;
-  l67:;	  yy->__pos= yypos65; yy->__thunkpos= yythunkpos65;  if (!yymatchChar(yy, '\n')) goto l64;
+  {  int yypos67= yy->__pos, yythunkpos67= yy->__thunkpos;  if (!yy_LOG(yy)) goto l68;  goto l67;
+  l68:;	  yy->__pos= yypos67; yy->__thunkpos= yythunkpos67;  if (!yy_LOG_(yy)) goto l69;  goto l67;
+  l69:;	  yy->__pos= yypos67; yy->__thunkpos= yythunkpos67;  if (!yymatchChar(yy, '\n')) goto l66;
   }
-  l65:;	
+  l67:;	
   yyprintf((stderr, "  ok   %s @ %s\n", "Log", yy->__buf+yy->__pos));
   return 1;
-  l64:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
+  l66:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
   yyprintf((stderr, "  fail %s @ %s\n", "Log", yy->__buf+yy->__pos));
   return 0;
 }
 YY_RULE(int) yy_File(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
   yyprintf((stderr, "%s\n", "File"));
-  {  int yypos69= yy->__pos, yythunkpos69= yy->__thunkpos;  if (!yy_Log(yy)) goto l70;  if (!yy_File(yy)) goto l70;  goto l69;
-  l70:;	  yy->__pos= yypos69; yy->__thunkpos= yythunkpos69;  if (!yymatchString(yy, "")) goto l68;
+  {  int yypos71= yy->__pos, yythunkpos71= yy->__thunkpos;  if (!yy_Log(yy)) goto l72;  if (!yy_File(yy)) goto l72;  goto l71;
+  l72:;	  yy->__pos= yypos71; yy->__thunkpos= yythunkpos71;  if (!yymatchString(yy, "")) goto l70;
   }
-  l69:;	
+  l71:;	
   yyprintf((stderr, "  ok   %s @ %s\n", "File", yy->__buf+yy->__pos));
   return 1;
-  l68:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
+  l70:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
   yyprintf((stderr, "  fail %s @ %s\n", "File", yy->__buf+yy->__pos));
   return 0;
 }
