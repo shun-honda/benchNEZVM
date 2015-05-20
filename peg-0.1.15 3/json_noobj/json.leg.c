@@ -710,10 +710,18 @@ static void usage(char *name)
   exit(1);
 }
 
+
+static uint64_t timer() {
+  struct timeval tv;
+  gettimeofday(&tv, NULL);
+  return tv.tv_sec * 1000 + tv.tv_usec / 1000;
+}
+
 int main(int argc, char **argv)
 {
   int   c;
-
+  uint64_t start, end;
+  start = timer();
   input= stdin;
   lineNumber= 1;
   fileName= "<stdin>";
@@ -768,7 +776,9 @@ int main(int argc, char **argv)
     if (!yyparse())
       yyerror("syntax error");
 
-
+  end = timer();
+    fprintf(stderr, "ErapsedTime: %llu msec\n",
+            (unsigned long long)end - start);
 
   return 0;
 }
