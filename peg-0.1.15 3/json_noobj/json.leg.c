@@ -6,6 +6,8 @@
 #define YYRULECOUNT 18
 
 
+#include <stdint.h>
+#include <sys/time.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -317,17 +319,17 @@ YY_RULE(int) yy_EXP(yycontext *yy); /* 17 */
 YY_RULE(int) yy_FRAC(yycontext *yy); /* 16 */
 YY_RULE(int) yy_INT(yycontext *yy); /* 15 */
 YY_RULE(int) yy_str(yycontext *yy); /* 14 */
-YY_RULE(int) yy_False(yycontext *yy); /* 13 */
-YY_RULE(int) yy_True(yycontext *yy); /* 12 */
-YY_RULE(int) yy_Null(yycontext *yy); /* 11 */
+YY_RULE(int) yy_Null(yycontext *yy); /* 13 */
+YY_RULE(int) yy_False(yycontext *yy); /* 12 */
+YY_RULE(int) yy_True(yycontext *yy); /* 11 */
 YY_RULE(int) yy_Number(yycontext *yy); /* 10 */
 YY_RULE(int) yy_Value(yycontext *yy); /* 9 */
 YY_RULE(int) yy_NAMESEP(yycontext *yy); /* 8 */
 YY_RULE(int) yy_String(yycontext *yy); /* 7 */
 YY_RULE(int) yy_VALUESEP(yycontext *yy); /* 6 */
 YY_RULE(int) yy_Member(yycontext *yy); /* 5 */
-YY_RULE(int) yy_Array(yycontext *yy); /* 4 */
-YY_RULE(int) yy_JSONObject(yycontext *yy); /* 3 */
+YY_RULE(int) yy_JSONObject(yycontext *yy); /* 4 */
+YY_RULE(int) yy_Array(yycontext *yy); /* 3 */
 YY_RULE(int) yy_S(yycontext *yy); /* 2 */
 YY_RULE(int) yy_File(yycontext *yy); /* 1 */
 
@@ -410,31 +412,31 @@ YY_RULE(int) yy_str(yycontext *yy)
   yyprintf((stderr, "  ok   %s @ %s\n", "str", yy->__buf+yy->__pos));
   return 1;
 }
-YY_RULE(int) yy_False(yycontext *yy)
+YY_RULE(int) yy_Null(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
-  yyprintf((stderr, "%s\n", "False"));  if (!yymatchString(yy, "false")) goto l24;
-  yyprintf((stderr, "  ok   %s @ %s\n", "False", yy->__buf+yy->__pos));
+  yyprintf((stderr, "%s\n", "Null"));  if (!yymatchString(yy, "null")) goto l24;
+  yyprintf((stderr, "  ok   %s @ %s\n", "Null", yy->__buf+yy->__pos));
   return 1;
   l24:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
+  yyprintf((stderr, "  fail %s @ %s\n", "Null", yy->__buf+yy->__pos));
+  return 0;
+}
+YY_RULE(int) yy_False(yycontext *yy)
+{  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
+  yyprintf((stderr, "%s\n", "False"));  if (!yymatchString(yy, "false")) goto l25;
+  yyprintf((stderr, "  ok   %s @ %s\n", "False", yy->__buf+yy->__pos));
+  return 1;
+  l25:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
   yyprintf((stderr, "  fail %s @ %s\n", "False", yy->__buf+yy->__pos));
   return 0;
 }
 YY_RULE(int) yy_True(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
-  yyprintf((stderr, "%s\n", "True"));  if (!yymatchString(yy, "true")) goto l25;
+  yyprintf((stderr, "%s\n", "True"));  if (!yymatchString(yy, "true")) goto l26;
   yyprintf((stderr, "  ok   %s @ %s\n", "True", yy->__buf+yy->__pos));
   return 1;
-  l25:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
-  yyprintf((stderr, "  fail %s @ %s\n", "True", yy->__buf+yy->__pos));
-  return 0;
-}
-YY_RULE(int) yy_Null(yycontext *yy)
-{  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
-  yyprintf((stderr, "%s\n", "Null"));  if (!yymatchString(yy, "null")) goto l26;
-  yyprintf((stderr, "  ok   %s @ %s\n", "Null", yy->__buf+yy->__pos));
-  return 1;
   l26:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
-  yyprintf((stderr, "  fail %s @ %s\n", "Null", yy->__buf+yy->__pos));
+  yyprintf((stderr, "  fail %s @ %s\n", "True", yy->__buf+yy->__pos));
   return 0;
 }
 YY_RULE(int) yy_Number(yycontext *yy)
@@ -461,13 +463,13 @@ YY_RULE(int) yy_Number(yycontext *yy)
 YY_RULE(int) yy_Value(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
   yyprintf((stderr, "%s\n", "Value"));
-  {  int yypos35= yy->__pos, yythunkpos35= yy->__thunkpos;  if (!yy_String(yy)) goto l36;  goto l35;
-  l36:;	  yy->__pos= yypos35; yy->__thunkpos= yythunkpos35;  if (!yy_Number(yy)) goto l37;  goto l35;
-  l37:;	  yy->__pos= yypos35; yy->__thunkpos= yythunkpos35;  if (!yy_JSONObject(yy)) goto l38;  goto l35;
-  l38:;	  yy->__pos= yypos35; yy->__thunkpos= yythunkpos35;  if (!yy_Array(yy)) goto l39;  goto l35;
-  l39:;	  yy->__pos= yypos35; yy->__thunkpos= yythunkpos35;  if (!yy_Null(yy)) goto l40;  goto l35;
-  l40:;	  yy->__pos= yypos35; yy->__thunkpos= yythunkpos35;  if (!yy_True(yy)) goto l41;  goto l35;
-  l41:;	  yy->__pos= yypos35; yy->__thunkpos= yythunkpos35;  if (!yy_False(yy)) goto l34;
+  {  int yypos35= yy->__pos, yythunkpos35= yy->__thunkpos;  if (!yy_Number(yy)) goto l36;  goto l35;
+  l36:;	  yy->__pos= yypos35; yy->__thunkpos= yythunkpos35;  if (!yy_True(yy)) goto l37;  goto l35;
+  l37:;	  yy->__pos= yypos35; yy->__thunkpos= yythunkpos35;  if (!yy_False(yy)) goto l38;  goto l35;
+  l38:;	  yy->__pos= yypos35; yy->__thunkpos= yythunkpos35;  if (!yy_JSONObject(yy)) goto l39;  goto l35;
+  l39:;	  yy->__pos= yypos35; yy->__thunkpos= yythunkpos35;  if (!yy_String(yy)) goto l40;  goto l35;
+  l40:;	  yy->__pos= yypos35; yy->__thunkpos= yythunkpos35;  if (!yy_Array(yy)) goto l41;  goto l35;
+  l41:;	  yy->__pos= yypos35; yy->__thunkpos= yythunkpos35;  if (!yy_Null(yy)) goto l34;
   }
   l35:;	
   yyprintf((stderr, "  ok   %s @ %s\n", "Value", yy->__buf+yy->__pos));
@@ -528,16 +530,16 @@ YY_RULE(int) yy_Member(yycontext *yy)
   yyprintf((stderr, "  fail %s @ %s\n", "Member", yy->__buf+yy->__pos));
   return 0;
 }
-YY_RULE(int) yy_Array(yycontext *yy)
+YY_RULE(int) yy_JSONObject(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
-  yyprintf((stderr, "%s\n", "Array"));  if (!yymatchChar(yy, '[')) goto l54;
+  yyprintf((stderr, "%s\n", "JSONObject"));  if (!yymatchChar(yy, '{')) goto l54;
   {  int yypos55= yy->__pos, yythunkpos55= yy->__thunkpos;
   l57:;	
   {  int yypos58= yy->__pos, yythunkpos58= yy->__thunkpos;  if (!yy_S(yy)) goto l58;  goto l57;
   l58:;	  yy->__pos= yypos58; yy->__thunkpos= yythunkpos58;
-  }  if (!yy_Value(yy)) goto l55;
+  }  if (!yy_Member(yy)) goto l55;
   l59:;	
-  {  int yypos60= yy->__pos, yythunkpos60= yy->__thunkpos;  if (!yy_VALUESEP(yy)) goto l60;  if (!yy_Value(yy)) goto l60;  goto l59;
+  {  int yypos60= yy->__pos, yythunkpos60= yy->__thunkpos;  if (!yy_VALUESEP(yy)) goto l60;  if (!yy_Member(yy)) goto l60;  goto l59;
   l60:;	  yy->__pos= yypos60; yy->__thunkpos= yythunkpos60;
   }  goto l56;
   l55:;	  yy->__pos= yypos55; yy->__thunkpos= yythunkpos55;
@@ -546,23 +548,23 @@ YY_RULE(int) yy_Array(yycontext *yy)
   l61:;	
   {  int yypos62= yy->__pos, yythunkpos62= yy->__thunkpos;  if (!yy_S(yy)) goto l62;  goto l61;
   l62:;	  yy->__pos= yypos62; yy->__thunkpos= yythunkpos62;
-  }  if (!yymatchChar(yy, ']')) goto l54;
-  yyprintf((stderr, "  ok   %s @ %s\n", "Array", yy->__buf+yy->__pos));
+  }  if (!yymatchChar(yy, '}')) goto l54;
+  yyprintf((stderr, "  ok   %s @ %s\n", "JSONObject", yy->__buf+yy->__pos));
   return 1;
   l54:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
-  yyprintf((stderr, "  fail %s @ %s\n", "Array", yy->__buf+yy->__pos));
+  yyprintf((stderr, "  fail %s @ %s\n", "JSONObject", yy->__buf+yy->__pos));
   return 0;
 }
-YY_RULE(int) yy_JSONObject(yycontext *yy)
+YY_RULE(int) yy_Array(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
-  yyprintf((stderr, "%s\n", "JSONObject"));  if (!yymatchChar(yy, '{')) goto l63;
+  yyprintf((stderr, "%s\n", "Array"));  if (!yymatchChar(yy, '[')) goto l63;
   {  int yypos64= yy->__pos, yythunkpos64= yy->__thunkpos;
   l66:;	
   {  int yypos67= yy->__pos, yythunkpos67= yy->__thunkpos;  if (!yy_S(yy)) goto l67;  goto l66;
   l67:;	  yy->__pos= yypos67; yy->__thunkpos= yythunkpos67;
-  }  if (!yy_Member(yy)) goto l64;
+  }  if (!yy_Value(yy)) goto l64;
   l68:;	
-  {  int yypos69= yy->__pos, yythunkpos69= yy->__thunkpos;  if (!yy_VALUESEP(yy)) goto l69;  if (!yy_Member(yy)) goto l69;  goto l68;
+  {  int yypos69= yy->__pos, yythunkpos69= yy->__thunkpos;  if (!yy_VALUESEP(yy)) goto l69;  if (!yy_Value(yy)) goto l69;  goto l68;
   l69:;	  yy->__pos= yypos69; yy->__thunkpos= yythunkpos69;
   }  goto l65;
   l64:;	  yy->__pos= yypos64; yy->__thunkpos= yythunkpos64;
@@ -571,11 +573,11 @@ YY_RULE(int) yy_JSONObject(yycontext *yy)
   l70:;	
   {  int yypos71= yy->__pos, yythunkpos71= yy->__thunkpos;  if (!yy_S(yy)) goto l71;  goto l70;
   l71:;	  yy->__pos= yypos71; yy->__thunkpos= yythunkpos71;
-  }  if (!yymatchChar(yy, '}')) goto l63;
-  yyprintf((stderr, "  ok   %s @ %s\n", "JSONObject", yy->__buf+yy->__pos));
+  }  if (!yymatchChar(yy, ']')) goto l63;
+  yyprintf((stderr, "  ok   %s @ %s\n", "Array", yy->__buf+yy->__pos));
   return 1;
   l63:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
-  yyprintf((stderr, "  fail %s @ %s\n", "JSONObject", yy->__buf+yy->__pos));
+  yyprintf((stderr, "  fail %s @ %s\n", "Array", yy->__buf+yy->__pos));
   return 0;
 }
 YY_RULE(int) yy_S(yycontext *yy)
@@ -594,8 +596,8 @@ YY_RULE(int) yy_File(yycontext *yy)
   {  int yypos75= yy->__pos, yythunkpos75= yy->__thunkpos;  if (!yy_S(yy)) goto l75;  goto l74;
   l75:;	  yy->__pos= yypos75; yy->__thunkpos= yythunkpos75;
   }
-  {  int yypos76= yy->__pos, yythunkpos76= yy->__thunkpos;  if (!yy_JSONObject(yy)) goto l77;  goto l76;
-  l77:;	  yy->__pos= yypos76; yy->__thunkpos= yythunkpos76;  if (!yy_Array(yy)) goto l73;
+  {  int yypos76= yy->__pos, yythunkpos76= yy->__thunkpos;  if (!yy_Array(yy)) goto l77;  goto l76;
+  l77:;	  yy->__pos= yypos76; yy->__thunkpos= yythunkpos76;  if (!yy_JSONObject(yy)) goto l73;
   }
   l76:;	
   l78:;	
@@ -698,19 +700,16 @@ void makeTrailer(char *text)
 
 static void usage(char *name)
 {
-  // version(name);
-  // fprintf(stderr, "usage: %s [<option>...] [<file>...]\n", name);
-  // fprintf(stderr, "where <option> can be\n");
-  // fprintf(stderr, "  -h          print this help information\n");
-  // fprintf(stderr, "  -o <ofile>  write output to <ofile>\n");
-  // fprintf(stderr, "  -v          be verbose\n");
-  // fprintf(stderr, "  -V          print version number and exit\n");
-  // fprintf(stderr, "if no <file> is given, input is read from stdin\n");
-  // fprintf(stderr, "if no <ofile> is given, output is written to stdout\n");
+  fprintf(stderr, "usage: %s [<option>...] [<file>...]\n", name);
+  fprintf(stderr, "where <option> can be\n");
+  fprintf(stderr, "  -h          print this help information\n");
+  fprintf(stderr, "  -o <ofile>  write output to <ofile>\n");
+  fprintf(stderr, "  -v          be verbose\n");
+  fprintf(stderr, "  -V          print version number and exit\n");
+  fprintf(stderr, "if no <file> is given, input is read from stdin\n");
+  fprintf(stderr, "if no <ofile> is given, output is written to stdout\n");
   exit(1);
 }
-
-
 static uint64_t timer() {
   struct timeval tv;
   gettimeofday(&tv, NULL);
@@ -729,20 +728,20 @@ int main(int argc, char **argv)
   while (-1 != (c= getopt(argc, argv, "Vho:v")))
     {
       switch (c)
-	{
+  {
 
-	case 'h':
-	  usage(basename(argv[0]));
-	  break;
+  case 'h':
+    usage(basename(argv[0]));
+    break;
 
-	case 'v':
-	  verboseFlag= 1;
-	  break;
+  case 'v':
+    verboseFlag= 1;
+    break;
 
-	default:
-	  fprintf(stderr, "for usage try: %s -h\n", argv[0]);
-	  exit(1);
-	}
+  default:
+    fprintf(stderr, "for usage try: %s -h\n", argv[0]);
+    exit(1);
+  }
     }
   argc -= optind;
   argv += optind;
@@ -750,27 +749,27 @@ int main(int argc, char **argv)
   if (argc)
     {
       for (;  argc;  --argc, ++argv)
-	{
-	  if (!strcmp(*argv, "-"))
-	    {
-	      input= stdin;
-	      fileName= "<stdin>";
-	    }
-	  else
-	    {
-	      if (!(input= fopen(*argv, "r")))
-		{
-		  perror(*argv);
-		  exit(1);
-		}
-	      fileName= *argv;
-	    }
-	  lineNumber= 1;
-	  if (!yyparse())
-	    yyerror("syntax error");
-	  if (input != stdin)
-	    fclose(input);
-	}
+  {
+    if (!strcmp(*argv, "-"))
+      {
+        input= stdin;
+        fileName= "<stdin>";
+      }
+    else
+      {
+        if (!(input= fopen(*argv, "r")))
+    {
+      perror(*argv);
+      exit(1);
+    }
+        fileName= *argv;
+      }
+    lineNumber= 1;
+    if (!yyparse())
+      yyerror("syntax error");
+    if (input != stdin)
+      fclose(input);
+  }
     }
   else
     if (!yyparse())
@@ -782,4 +781,5 @@ int main(int argc, char **argv)
 
   return 0;
 }
+
 
