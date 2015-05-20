@@ -473,68 +473,29 @@ static uint64_t timer() {
 
 int main(int argc, char **argv)
 {
-  int   c;
-  uint64_t start, end;
-  start = timer();
   input= stdin;
   lineNumber= 1;
   fileName= "<stdin>";
-
-  while (-1 != (c= getopt(argc, argv, "Vho:v")))
-    {
-      switch (c)
-  {
-
-  case 'h':
-    usage(basename(argv[0]));
-    break;
-
-  case 'v':
-    verboseFlag= 1;
-    break;
-
-  default:
-    fprintf(stderr, "for usage try: %s -h\n", argv[0]);
-    exit(1);
-  }
-    }
-  argc -= optind;
-  argv += optind;
-
-  if (argc)
-    {
-      for (;  argc;  --argc, ++argv)
-  {
-    if (!strcmp(*argv, "-"))
-      {
-        input= stdin;
-        fileName= "<stdin>";
+  
+  for (int i = 0; i < 5; i++) {
+    if (argc >= 2) {
+      if (!(input = fopen(argv[1], "r"))) {
+        fprintf(stderr, "File [%s] is not found!\n", argv[1]);
+        return 1;
       }
-    else
-      {
-        if (!(input= fopen(*argv, "r")))
-    {
-      perror(*argv);
-      exit(1);
     }
-        fileName= *argv;
-      }
-    lineNumber= 1;
-    if (!yyparse())
-      yyerror("syntax error");
-    if (input != stdin)
-      fclose(input);
+  
+    uint64_t start, end;
+    start = timer();
+    if ((yyparse())) {
+      //json_print(stdout, json);
+    } else {
+      printf("xml error!\n");
+    }
+    end = timer();
+  
+    printf("ElapsedTime: %llu msec\n", end - start);
   }
-    }
-  else
-    if (!yyparse())
-      yyerror("syntax error");
-
-  end = timer();
-    fprintf(stderr, "ErapsedTime: %llu msec\n",
-            (unsigned long long)end - start);
 
   return 0;
 }
-
-
