@@ -12,7 +12,6 @@
 # include <string.h>
 # include <libgen.h>
 # include <assert.h>
-#include <sys/time.h> // gettimeofday
 
   typedef struct Header Header;
 
@@ -699,21 +698,16 @@ void makeTrailer(char *text)
 
 static void usage(char *name)
 {
-  fprintf(stderr, "usage: %s [<option>...] [<file>...]\n", name);
-  fprintf(stderr, "where <option> can be\n");
-  fprintf(stderr, "  -h          print this help information\n");
-  fprintf(stderr, "  -o <ofile>  write output to <ofile>\n");
-  fprintf(stderr, "  -v          be verbose\n");
-  fprintf(stderr, "  -V          print version number and exit\n");
-  fprintf(stderr, "if no <file> is given, input is read from stdin\n");
-  fprintf(stderr, "if no <ofile> is given, output is written to stdout\n");
+  // version(name);
+  // fprintf(stderr, "usage: %s [<option>...] [<file>...]\n", name);
+  // fprintf(stderr, "where <option> can be\n");
+  // fprintf(stderr, "  -h          print this help information\n");
+  // fprintf(stderr, "  -o <ofile>  write output to <ofile>\n");
+  // fprintf(stderr, "  -v          be verbose\n");
+  // fprintf(stderr, "  -V          print version number and exit\n");
+  // fprintf(stderr, "if no <file> is given, input is read from stdin\n");
+  // fprintf(stderr, "if no <ofile> is given, output is written to stdout\n");
   exit(1);
-}
-
-uint64_t timer() {
-  struct timeval tv;
-  gettimeofday(&tv, NULL);
-  return tv.tv_sec * 1000 + tv.tv_usec / 1000;
 }
 
 int main(int argc, char **argv)
@@ -724,75 +718,57 @@ int main(int argc, char **argv)
   lineNumber= 1;
   fileName= "<stdin>";
 
- //  while (-1 != (c= getopt(argc, argv, "Vho:v")))
- //    {
- //      switch (c)
-	// {
+  while (-1 != (c= getopt(argc, argv, "Vho:v")))
+    {
+      switch (c)
+	{
 
-	// case 'h':
-	//   usage(basename(argv[0]));
-	//   break;
+	case 'h':
+	  usage(basename(argv[0]));
+	  break;
 
-	// case 'v':
-	//   verboseFlag= 1;
-	//   break;
+	case 'v':
+	  verboseFlag= 1;
+	  break;
 
-	// default:
-	//   fprintf(stderr, "for usage try: %s -h\n", argv[0]);
-	//   exit(1);
-	// }
- //    }
- //  argc -= optind;
- //  argv += optind;
-
- //  if (argc)
- //    {
- //      for (;  argc;  --argc, ++argv)
-	// {
-	//   if (!strcmp(*argv, "-"))
-	//     {
-	//       input= stdin;
-	//       fileName= "<stdin>";
-	//     }
-	//   else
-	//     {
-	//       if (!(input= fopen(*argv, "r")))
-	// 	{
-	// 	  perror(*argv);
-	// 	  exit(1);
-	// 	}
-	//       fileName= *argv;
-	//     }
-	//   lineNumber= 1;
-	//   if (!yyparse())
-	//     yyerror("syntax error");
-	//   if (input != stdin)
-	//     fclose(input);
-	// }
- //    }
- //  else
- //    if (!yyparse())
- //      yyerror("syntax error");
-  for (int i = 0; i < 5; i++) {
-    if (argc >= 2) {
-      if (!(input = fopen(argv[1], "r"))) {
-        fprintf(stderr, "File [%s] is not found!\n", argv[1]);
-        return 1;
-      }
+	default:
+	  fprintf(stderr, "for usage try: %s -h\n", argv[0]);
+	  exit(1);
+	}
     }
-    fileName= argv[1];
-  
-    uint64_t start, end;
-    start = timer();
-    if ((yyparse())) {
-      //json_print(stdout, json);
-    } else {
-      printf("Json error!\n");
+  argc -= optind;
+  argv += optind;
+
+  if (argc)
+    {
+      for (;  argc;  --argc, ++argv)
+	{
+	  if (!strcmp(*argv, "-"))
+	    {
+	      input= stdin;
+	      fileName= "<stdin>";
+	    }
+	  else
+	    {
+	      if (!(input= fopen(*argv, "r")))
+		{
+		  perror(*argv);
+		  exit(1);
+		}
+	      fileName= *argv;
+	    }
+	  lineNumber= 1;
+	  if (!yyparse())
+	    yyerror("syntax error");
+	  if (input != stdin)
+	    fclose(input);
+	}
     }
-    end = timer();
-  
-    printf("ErapsedTime: %llu msec\n", end - start);
-  }
+  else
+    if (!yyparse())
+      yyerror("syntax error");
+
+
 
   return 0;
 }
