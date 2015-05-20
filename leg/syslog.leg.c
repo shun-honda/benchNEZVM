@@ -401,30 +401,36 @@ YY_RULE(int) yy_PID(yycontext *yy)
   return 0;
 }
 YY_RULE(int) yy_PROCESS(yycontext *yy)
-{
+{  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
   yyprintf((stderr, "%s\n", "PROCESS"));
-  l24:;	
-  {  int yypos25= yy->__pos, yythunkpos25= yy->__thunkpos;
+  {  int yypos24= yy->__pos, yythunkpos24= yy->__thunkpos;
   {  int yypos26= yy->__pos, yythunkpos26= yy->__thunkpos;  if (!yymatchChar(yy, '[')) goto l26;  goto l25;
   l26:;	  yy->__pos= yypos26; yy->__thunkpos= yythunkpos26;
-  }  if (!yymatchDot(yy)) goto l25;  goto l24;
-  l25:;	  yy->__pos= yypos25; yy->__thunkpos= yythunkpos25;
+  }  if (!yymatchDot(yy)) goto l25;  if (!yy_PROCESS(yy)) goto l25;  goto l24;
+  l25:;	  yy->__pos= yypos24; yy->__thunkpos= yythunkpos24;  if (!yymatchString(yy, "")) goto l23;
   }
+  l24:;	
   yyprintf((stderr, "  ok   %s @ %s\n", "PROCESS", yy->__buf+yy->__pos));
   return 1;
+  l23:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
+  yyprintf((stderr, "  fail %s @ %s\n", "PROCESS", yy->__buf+yy->__pos));
+  return 0;
 }
 YY_RULE(int) yy_HOST(yycontext *yy)
-{
+{  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
   yyprintf((stderr, "%s\n", "HOST"));
-  l28:;	
-  {  int yypos29= yy->__pos, yythunkpos29= yy->__thunkpos;
+  {  int yypos28= yy->__pos, yythunkpos28= yy->__thunkpos;
   {  int yypos30= yy->__pos, yythunkpos30= yy->__thunkpos;  if (!yymatchChar(yy, ' ')) goto l30;  goto l29;
   l30:;	  yy->__pos= yypos30; yy->__thunkpos= yythunkpos30;
-  }  if (!yymatchDot(yy)) goto l29;  goto l28;
-  l29:;	  yy->__pos= yypos29; yy->__thunkpos= yythunkpos29;
+  }  if (!yymatchDot(yy)) goto l29;  if (!yy_HOST(yy)) goto l29;  goto l28;
+  l29:;	  yy->__pos= yypos28; yy->__thunkpos= yythunkpos28;  if (!yymatchString(yy, "")) goto l27;
   }
+  l28:;	
   yyprintf((stderr, "  ok   %s @ %s\n", "HOST", yy->__buf+yy->__pos));
   return 1;
+  l27:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
+  yyprintf((stderr, "  fail %s @ %s\n", "HOST", yy->__buf+yy->__pos));
+  return 0;
 }
 YY_RULE(int) yy_TIME(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
