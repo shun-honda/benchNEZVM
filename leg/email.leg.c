@@ -404,7 +404,10 @@ YY_RULE(int) yy_File(yycontext *yy)
   l23:;	  yy->__pos= yypos23; yy->__thunkpos= yythunkpos23;
   }
   l27:;	
-  {  int yypos28= yy->__pos, yythunkpos28= yy->__thunkpos;  if (!yymatchDot(yy)) goto l28;  goto l27;
+  {  int yypos28= yy->__pos, yythunkpos28= yy->__thunkpos;
+  {  int yypos29= yy->__pos, yythunkpos29= yy->__thunkpos;  if (!yy_EMAIL(yy)) goto l29;  goto l28;
+  l29:;	  yy->__pos= yypos29; yy->__thunkpos= yythunkpos29;
+  }  if (!yymatchDot(yy)) goto l28;  goto l27;
   l28:;	  yy->__pos= yypos28; yy->__thunkpos= yythunkpos28;
   }
   yyprintf((stderr, "  ok   %s @ %s\n", "File", yy->__buf+yy->__pos));
