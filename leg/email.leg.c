@@ -418,7 +418,7 @@ YY_RULE(int) yy_LOCAL(yycontext *yy)
 }
 YY_RULE(int) yy_EMAIL(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
-  yyprintf((stderr, "%s\n", "EMAIL"));  if (!yy_LOCAL(yy) && !yy_LOCAL(yy) && !yy_LOCAL(yy) && !yy_LOCAL(yy) && !yy_LOCAL(yy)) goto l34;  if (!yymatchChar(yy, '@')) goto l34;  if (!yy_DOMAIN(yy) && !yy_DOMAIN(yy)) goto l34;
+  yyprintf((stderr, "%s\n", "EMAIL"));  if (!yy_LOCAL(yy) && !yy_LOCAL(yy) && !yy_LOCAL(yy)) goto l34;  if (!yymatchChar(yy, '@')) goto l34;  if (!yy_DOMAIN(yy) && !yy_DOMAIN(yy)) goto l34;
   {  int yypos35= yy->__pos, yythunkpos35= yy->__thunkpos;
   l37:;	
   {  int yypos38= yy->__pos, yythunkpos38= yy->__thunkpos;  if (!yymatchClass(yy, (unsigned char *)"\000\006\000\000\001\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000")) goto l38;  goto l37;
