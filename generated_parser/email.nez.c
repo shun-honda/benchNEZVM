@@ -902,203 +902,203 @@ int pAnyChar121(ParsingContext ctx) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)101)) {
+   if(ctx->inputs[ctx->pos] == (char)101) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)102)) {
+   if(ctx->inputs[ctx->pos] == (char)102) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)103)) {
+   if(ctx->inputs[ctx->pos] == (char)103) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)104)) {
+   if(ctx->inputs[ctx->pos] == (char)104) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)105)) {
+   if(ctx->inputs[ctx->pos] == (char)105) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)106)) {
+   if(ctx->inputs[ctx->pos] == (char)106) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)107)) {
+   if(ctx->inputs[ctx->pos] == (char)107) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)108)) {
+   if(ctx->inputs[ctx->pos] == (char)108) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)109)) {
+   if(ctx->inputs[ctx->pos] == (char)109) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)110)) {
+   if(ctx->inputs[ctx->pos] == (char)110) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)111)) {
+   if(ctx->inputs[ctx->pos] == (char)111) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)112)) {
+   if(ctx->inputs[ctx->pos] == (char)112) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)113)) {
+   if(ctx->inputs[ctx->pos] == (char)113) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)114)) {
+   if(ctx->inputs[ctx->pos] == (char)114) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)115)) {
+   if(ctx->inputs[ctx->pos] == (char)115) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)116)) {
+   if(ctx->inputs[ctx->pos] == (char)116) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)117)) {
+   if(ctx->inputs[ctx->pos] == (char)117) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)118)) {
+   if(ctx->inputs[ctx->pos] == (char)118) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)119)) {
+   if(ctx->inputs[ctx->pos] == (char)119) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)120)) {
+   if(ctx->inputs[ctx->pos] == (char)120) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)121)) {
+   if(ctx->inputs[ctx->pos] == (char)121) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)122)) {
+   if(ctx->inputs[ctx->pos] == (char)122) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)123)) {
+   if(ctx->inputs[ctx->pos] == (char)123) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)124)) {
+   if(ctx->inputs[ctx->pos] == (char)124) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)125)) {
+   if(ctx->inputs[ctx->pos] == (char)125) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)126)) {
+   if(ctx->inputs[ctx->pos] == (char)126) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)127)) {
+   if(ctx->inputs[ctx->pos] == (char)127) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)128)) {
+   if(ctx->inputs[ctx->pos] == (char)128) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)129)) {
+   if(ctx->inputs[ctx->pos] == (char)129) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)130)) {
+   if(ctx->inputs[ctx->pos] == (char)130) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)131)) {
+   if(ctx->inputs[ctx->pos] == (char)131) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)132)) {
+   if(ctx->inputs[ctx->pos] == (char)132) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)133)) {
+   if(ctx->inputs[ctx->pos] == (char)133) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)134)) {
+   if(ctx->inputs[ctx->pos] == (char)134) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)135)) {
+   if(ctx->inputs[ctx->pos] == (char)135) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)136)) {
+   if(ctx->inputs[ctx->pos] == (char)136) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)137)) {
+   if(ctx->inputs[ctx->pos] == (char)137) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)138)) {
+   if(ctx->inputs[ctx->pos] == (char)138) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)139)) {
+   if(ctx->inputs[ctx->pos] == (char)139) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)140)) {
+   if(ctx->inputs[ctx->pos] == (char)140) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)141)) {
+   if(ctx->inputs[ctx->pos] == (char)141) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)142)) {
+   if(ctx->inputs[ctx->pos] == (char)142) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)143)) {
+   if(ctx->inputs[ctx->pos] == (char)143) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)144)) {
+   if(ctx->inputs[ctx->pos] == (char)144) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)145)) {
+   if(ctx->inputs[ctx->pos] == (char)145) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)146)) {
+   if(ctx->inputs[ctx->pos] == (char)146) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)147)) {
+   if(ctx->inputs[ctx->pos] == (char)147) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)148)) {
+   if(ctx->inputs[ctx->pos] == (char)148) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)149)) {
+   if(ctx->inputs[ctx->pos] == (char)149) {
       nez_consume(ctx);
       return 1;
    }
-   if(nez_match(ctx, (char)150)) {
+   if(ctx->inputs[ctx->pos] == (char)150) {
       nez_consume(ctx);
       return 1;
    }
