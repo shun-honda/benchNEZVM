@@ -405,6 +405,14 @@ YY_RULE(int) yy_LOCAL(yycontext *yy)
 YY_RULE(int) yy_EMAIL(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
   yyprintf((stderr, "%s\n", "EMAIL"));  if (!yy_LOCAL(yy)) goto l31;  if (!yymatchChar(yy, '@')) goto l31;  if (!yy_DOMAIN(yy)) goto l31;
+  l32:;	
+  {  int yypos33= yy->__pos, yythunkpos33= yy->__thunkpos;  if (!yymatchClass(yy, (unsigned char *)"\000\006\000\000\001\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000")) goto l33;  goto l32;
+  l33:;	  yy->__pos= yypos33; yy->__thunkpos= yythunkpos33;
+  }
+  {  int yypos34= yy->__pos, yythunkpos34= yy->__thunkpos;  if (!yy_EMAIL(yy)) goto l34;  goto l35;
+  l34:;	  yy->__pos= yypos34; yy->__thunkpos= yythunkpos34;
+  }
+  l35:;	
   yyprintf((stderr, "  ok   %s @ %s\n", "EMAIL", yy->__buf+yy->__pos));
   return 1;
   l31:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
@@ -414,27 +422,27 @@ YY_RULE(int) yy_EMAIL(yycontext *yy)
 YY_RULE(int) yy_File(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
   yyprintf((stderr, "%s\n", "File"));
-  l33:;	
-  {  int yypos34= yy->__pos, yythunkpos34= yy->__thunkpos;
-  l35:;	
-  {  int yypos36= yy->__pos, yythunkpos36= yy->__thunkpos;
-  {  int yypos37= yy->__pos, yythunkpos37= yy->__thunkpos;  if (!yy_EMAIL(yy)) goto l37;  goto l36;
-  l37:;	  yy->__pos= yypos37; yy->__thunkpos= yythunkpos37;
-  }  if (!yymatchDot(yy)) goto l36;  goto l35;
-  l36:;	  yy->__pos= yypos36; yy->__thunkpos= yythunkpos36;
-  }  if (!yy_EMAIL(yy)) goto l34;  goto l33;
-  l34:;	  yy->__pos= yypos34; yy->__thunkpos= yythunkpos34;
-  }
-  l38:;	
-  {  int yypos39= yy->__pos, yythunkpos39= yy->__thunkpos;
-  {  int yypos40= yy->__pos, yythunkpos40= yy->__thunkpos;  if (!yy_EMAIL(yy)) goto l40;  goto l39;
+  l37:;	
+  {  int yypos38= yy->__pos, yythunkpos38= yy->__thunkpos;
+  l39:;	
+  {  int yypos40= yy->__pos, yythunkpos40= yy->__thunkpos;
+  {  int yypos41= yy->__pos, yythunkpos41= yy->__thunkpos;  if (!yy_EMAIL(yy)) goto l41;  goto l40;
+  l41:;	  yy->__pos= yypos41; yy->__thunkpos= yythunkpos41;
+  }  if (!yymatchDot(yy)) goto l40;  goto l39;
   l40:;	  yy->__pos= yypos40; yy->__thunkpos= yythunkpos40;
-  }  if (!yymatchDot(yy)) goto l39;  goto l38;
-  l39:;	  yy->__pos= yypos39; yy->__thunkpos= yythunkpos39;
+  }  if (!yy_EMAIL(yy)) goto l38;  goto l37;
+  l38:;	  yy->__pos= yypos38; yy->__thunkpos= yythunkpos38;
+  }
+  l42:;	
+  {  int yypos43= yy->__pos, yythunkpos43= yy->__thunkpos;
+  {  int yypos44= yy->__pos, yythunkpos44= yy->__thunkpos;  if (!yy_EMAIL(yy)) goto l44;  goto l43;
+  l44:;	  yy->__pos= yypos44; yy->__thunkpos= yythunkpos44;
+  }  if (!yymatchDot(yy)) goto l43;  goto l42;
+  l43:;	  yy->__pos= yypos43; yy->__thunkpos= yythunkpos43;
   }
   yyprintf((stderr, "  ok   %s @ %s\n", "File", yy->__buf+yy->__pos));
   return 1;
-  l32:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
+  l36:;	  yy->__pos= yypos0; yy->__thunkpos= yythunkpos0;
   yyprintf((stderr, "  fail %s @ %s\n", "File", yy->__buf+yy->__pos));
   return 0;
 }
