@@ -376,7 +376,7 @@ YY_RULE(int) yy_SUBDOMAIN(yycontext *yy)
 }
 YY_RULE(int) yy_DOMAIN(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
-  yyprintf((stderr, "%s\n", "DOMAIN"));  if (!yy_SUBDOMAIN(yy)) goto l18;  if (!yymatchChar(yy, '.')) goto l18;  if (!yy_SUBDOMAIN(yy)) goto l18;
+  yyprintf((stderr, "%s\n", "DOMAIN"));  if (!yy_SUBDOMAIN(yy) && !yy_SUBDOMAIN(yy)) goto l18;  if (!yymatchChar(yy, '.')) goto l18;  if (!yy_SUBDOMAIN(yy)) goto l18;
   {  int yypos19= yy->__pos, yythunkpos19= yy->__thunkpos;  if (!yy_REPDOMAIN(yy)) goto l19;  goto l20;
   l19:;	  yy->__pos= yypos19; yy->__thunkpos= yythunkpos19;
   }
@@ -406,7 +406,7 @@ YY_RULE(int) yy_LOCAL(yycontext *yy)
   l28:;	  goto l22;
   l23:;	  yy->__pos= yypos23; yy->__thunkpos= yythunkpos23;
   }
-  {  int yypos32= yy->__pos, yythunkpos32= yy->__thunkpos;  if (!yymatchChar(yy, '.')) goto l32;  if (!yy_LOCAL(yy)) goto l32;  goto l33;
+  {  int yypos32= yy->__pos, yythunkpos32= yy->__thunkpos;  if (!yymatchChar(yy, '.')) goto l32;  if (!yy_LOCAL(yy) && !yy_LOCAL(yy)) goto l32;  goto l33;
   l32:;	  yy->__pos= yypos32; yy->__thunkpos= yythunkpos32;
   }
   l33:;	
@@ -418,12 +418,12 @@ YY_RULE(int) yy_LOCAL(yycontext *yy)
 }
 YY_RULE(int) yy_EMAIL(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
-  yyprintf((stderr, "%s\n", "EMAIL"));  if (!yy_LOCAL(yy) && !yy_LOCAL(yy)) goto l34;  if (!yymatchChar(yy, '@')) goto l34;  if (!yy_DOMAIN(yy)) goto l34;
+  yyprintf((stderr, "%s\n", "EMAIL"));  if (!yy_LOCAL(yy) && !yy_LOCAL(yy)) goto l34;  if (!yymatchChar(yy, '@')) goto l34;  if (!yy_DOMAIN(yy) && !yy_DOMAIN(yy)) goto l34;
   {  int yypos35= yy->__pos, yythunkpos35= yy->__thunkpos;
   l37:;	
   {  int yypos38= yy->__pos, yythunkpos38= yy->__thunkpos;  if (!yymatchClass(yy, (unsigned char *)"\000\006\000\000\001\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000")) goto l38;  goto l37;
   l38:;	  yy->__pos= yypos38; yy->__thunkpos= yythunkpos38;
-  }  if (!yy_EMAIL(yy) && !yy_EMAIL(yy)) goto l35;  goto l36;
+  }  if (!yy_EMAIL(yy) && !yy_EMAIL(yy) && !yy_EMAIL(yy)) goto l35;  goto l36;
   l35:;	  yy->__pos= yypos35; yy->__thunkpos= yythunkpos35;
   }
   l36:;	
