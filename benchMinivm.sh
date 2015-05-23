@@ -21,6 +21,6 @@ echo "\nparse test.syslog\n"
 ./../MiniNezVM/src/mini_instruction_opt_vm/build/nezvm -t stat -p minivmByteCode/opt/syslog.nez.bin -i input/test.syslog
 
 echo "\nparse enron\n"
-./../MiniNezVM/src/mini_instruction_opt_vm/build/nezvm -t stat -p minivmByteCode/opt/email.nez.bin -i input/enron.txt
+./../MiniNezVM/src/mini_instruction_opt_vm/build/nezvm -t stat -p minivmByteCode/opt/email.nez.bin -i ../enron.txt
 
 echo "\parse"
