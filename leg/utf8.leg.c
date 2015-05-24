@@ -337,7 +337,7 @@ YY_RULE(int) yy_File(yycontext *yy)
 {  int yypos0= yy->__pos, yythunkpos0= yy->__thunkpos;
   yyprintf((stderr, "%s\n", "File"));
   l7:;	
-  {  int yypos8= yy->__pos, yythunkpos8= yy->__thunkpos;  if (!yy_UTF8(yy) && !yy_UTF8(yy)) goto l8;  goto l7;
+  {  int yypos8= yy->__pos, yythunkpos8= yy->__thunkpos;  if (!yy_UTF8(yy)) goto l8;  goto l7;
   l8:;	  yy->__pos= yypos8; yy->__thunkpos= yythunkpos8;
   }
   {  int yypos9= yy->__pos, yythunkpos9= yy->__thunkpos;  if (!yymatchDot(yy)) goto l9;  goto l6;
